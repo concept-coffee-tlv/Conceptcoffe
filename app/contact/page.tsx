@@ -7,7 +7,7 @@ import { ContactInfo } from "@/components/contact/contact-info"
 export const metadata = {
   title: "Contact | concept:coffee",
   description:
-    "Get in touch with concept:coffee. Inquire about workshops, corporate events, or private sessions in Amsterdam.",
+    "Get in touch with concept:coffee. Inquire about workshops, corporate events, or private sessions in Tel Aviv.",
 }
 
 export default function ContactPage() {

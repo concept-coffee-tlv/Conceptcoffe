@@ -8,7 +8,7 @@ import { AboutCTA } from "@/components/about/about-cta"
 export const metadata = {
   title: "About Us | concept:coffee",
   description:
-    "Learn about concept:coffee, Amsterdam's specialty coffee education studio. Meet founder Evan and discover our passion for sharing coffee knowledge.",
+    "Learn about concept:coffee, Tel Aviv's specialty coffee education studio. Meet founder Evan and discover our passion for sharing coffee knowledge.",
 }
 
 export default function AboutPage() {

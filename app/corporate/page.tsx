@@ -9,7 +9,7 @@ import { CorporateCTA } from "@/components/corporate/corporate-cta"
 export const metadata = {
   title: "Corporate Events | concept:coffee",
   description:
-    "Unique team-building coffee experiences for companies in Amsterdam. Engage your team with hands-on workshops that foster connection and creativity.",
+    "Unique team-building coffee experiences for companies in Tel Aviv. Engage your team with hands-on workshops that foster connection and creativity.",
 }
 
 export default function CorporatePage() {

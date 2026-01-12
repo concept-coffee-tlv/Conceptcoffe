@@ -5,7 +5,7 @@ export function AboutHero() {
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">About Us</p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance">
-            Coffee Education, Amsterdam Style
+            Coffee Education, Tel Aviv Style
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
             concept:coffee was born from a simple belief: that great coffee should be accessible, educational, and—above

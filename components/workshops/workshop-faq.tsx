@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "Where are the workshops held?",
     answer:
-      "Our workshops take place at our studio in Amsterdam. The exact address and directions will be sent with your booking confirmation.",
+      "Our workshops take place at our studio in Tel Aviv. The exact address and directions will be sent with your booking confirmation.",
   },
 ]
 

@@ -8,9 +8,9 @@ const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 export const metadata: Metadata = {
-  title: "concept:coffee | Specialty Coffee Workshops in Amsterdam",
+  title: "concept:coffee | Specialty Coffee Workshops in Tel Aviv",
   description:
-    "Hands-on coffee workshops, corporate experiences, and private sessions in Amsterdam. Learn from expert baristas and discover the art of specialty coffee.",
+    "Hands-on coffee workshops, corporate experiences, and private sessions in Tel Aviv. Learn from expert baristas and discover the art of specialty coffee.",
   generator: "v0.app",
   icons: {
     icon: [

@@ -8,7 +8,7 @@ import { WorkshopFAQ } from "@/components/workshops/workshop-faq"
 export const metadata = {
   title: "Coffee Workshops | concept:coffee",
   description:
-    "Join our hands-on coffee workshops in Amsterdam. Learn latte art, brewing methods, espresso fundamentals, and more from expert baristas.",
+    "Join our hands-on coffee workshops in Tel Aviv. Learn latte art, brewing methods, espresso fundamentals, and more from expert baristas.",
 }
 
 export default function WorkshopsPage() {

@@ -31,7 +31,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 max-w-md text-primary-foreground/80 leading-relaxed">
-              Specialty coffee education in the heart of Amsterdam. Hands-on workshops, corporate experiences, and
+              Specialty coffee education in the heart of Tel Aviv. Hands-on workshops, corporate experiences, and
               private sessions led by expert baristas.
             </p>
             <div className="mt-6 flex items-center gap-4">
@@ -88,7 +88,7 @@ export function Footer() {
             </ul>
             <div className="mt-6 flex items-start gap-2 text-primary-foreground/80">
               <MapPin className="h-5 w-5 shrink-0 mt-0.5" />
-              <span className="text-sm">Amsterdam, Netherlands</span>
+              <span className="text-sm">Tel Aviv, Netherlands</span>
             </div>
           </div>
         </div>

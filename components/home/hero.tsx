@@ -10,13 +10,13 @@ export function Hero() {
         <img
           src="/images/coffe-20background.avif"
           alt="Coffee brewing with pour-over"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center lg:object-[60%_center]"
         />
         <div className="absolute inset-0 bg-foreground/50" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-24">
-        <div className="max-w-2xl">
+      <div className="relative z-10 w-full px-6 lg:px-8 py-24">
+        <div className="max-w-xl lg:ml-[10%]">
           <div className="flex flex-wrap items-center gap-4 mb-6">
             <div className="flex items-center gap-1.5 bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
               <Star className="h-4 w-4 fill-accent text-accent" />
@@ -32,7 +32,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 text-lg md:text-xl text-background/90 leading-relaxed max-w-xl">
             Hands-on workshops, corporate experiences, and private sessions. Discover the craft of specialty coffee with
-            expert guidance in Amsterdam.
+            expert guidance in Tel Aviv.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">

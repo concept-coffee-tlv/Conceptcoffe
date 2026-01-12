@@ -24,7 +24,7 @@ export function ContactInfo() {
             </div>
             <div>
               <p className="font-medium text-foreground">Location</p>
-              <p className="text-muted-foreground">Amsterdam, Netherlands</p>
+              <p className="text-muted-foreground">Tel Aviv, Netherlands</p>
               <p className="text-sm text-muted-foreground/80">(Exact address shared upon booking)</p>
             </div>
           </div>

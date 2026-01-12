@@ -9,7 +9,7 @@ import { PrivateCTA } from "@/components/private/private-cta"
 export const metadata = {
   title: "Private Sessions | concept:coffee",
   description:
-    "Tailored one-on-one or small group coffee sessions. Perfect for birthdays, celebrations, or personalized learning experiences in Amsterdam.",
+    "Tailored one-on-one or small group coffee sessions. Perfect for birthdays, celebrations, or personalized learning experiences in Tel Aviv.",
 }
 
 export default function PrivatePage() {
