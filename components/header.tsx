@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button"
 const navigation = [
   { name: "Workshops", href: "/workshops" },
   { name: "Corporate", href: "/corporate" },
-  { name: "Private", href: "/private" },
+  { name: "Community", href: "/community" },
+  { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
@@ -19,7 +20,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
         <Link href="/" className="flex items-center">
           <Image
             src="/images/concept-20coffee-20logo.avif"

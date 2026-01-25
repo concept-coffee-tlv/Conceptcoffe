@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -15,11 +14,46 @@ export function ContactForm() {
     subject: "",
     message: "",
   })
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic would go here
-    console.log("Form submitted:", formData)
+    setStatus("loading")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setStatus("success")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        setStatus("error")
+      }
+    } catch (error) {
+      setStatus("error")
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="bg-accent/10 border border-accent rounded-xl p-8 text-center">
+        <h3 className="font-serif text-xl font-bold text-foreground mb-2">Message Sent!</h3>
+        <p className="text-muted-foreground">Thank you for reaching out. We'll get back to you soon.</p>
+        <Button
+          onClick={() => setStatus("idle")}
+          variant="outline"
+          className="mt-4"
+        >
+          Send Another Message
+        </Button>
+      </div>
+    )
   }
 
   return (
@@ -77,8 +111,17 @@ export function ContactForm() {
         />
       </div>
 
-      <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
-        Send Message
+      {status === "error" && (
+        <p className="text-red-500 text-sm">Something went wrong. Please try again.</p>
+      )}
+
+      <Button
+        type="submit"
+        size="lg"
+        className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
+        disabled={status === "loading"}
+      >
+        {status === "loading" ? "Sending..." : "Send Message"}
       </Button>
     </form>
   )

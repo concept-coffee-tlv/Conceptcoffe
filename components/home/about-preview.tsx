@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export function AboutPreview() {
   return (
     <section className="py-24 lg:py-32 bg-secondary">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg">

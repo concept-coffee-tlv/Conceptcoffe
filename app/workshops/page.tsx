@@ -1,14 +1,11 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { WorkshopHero } from "@/components/workshops/workshop-hero"
-import { WorkshopList } from "@/components/workshops/workshop-list"
-import { BookingSection } from "@/components/workshops/booking-section"
-import { WorkshopFAQ } from "@/components/workshops/workshop-faq"
+import { WorkshopHero, WorkshopTypes, WorkshopBooking } from "@/components/workshops/workshop-types"
 
 export const metadata = {
   title: "Coffee Workshops | concept:coffee",
   description:
-    "Join our hands-on coffee workshops in Tel Aviv. Learn latte art, brewing methods, espresso fundamentals, and more from expert baristas.",
+    "Hands-on coffee workshops in Tel Aviv. Learn tasting, barista skills, roasting, cupping and more in personalized sessions.",
 }
 
 export default function WorkshopsPage() {
@@ -17,9 +14,8 @@ export default function WorkshopsPage() {
       <Header />
       <main>
         <WorkshopHero />
-        <WorkshopList />
-        <BookingSection />
-        <WorkshopFAQ />
+        <WorkshopTypes />
+        <WorkshopBooking />
       </main>
       <Footer />
     </>

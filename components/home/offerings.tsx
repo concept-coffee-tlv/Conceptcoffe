@@ -4,15 +4,15 @@ import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 const offerings = [
   {
-    title: "Public Workshops",
-    tagline: "Join our open sessions",
+    title: "Private Sessions",
+    tagline: "Your own coffee journey",
     description:
-      "Learn alongside fellow coffee enthusiasts in our scheduled workshops. Perfect for individuals, couples, or friends.",
+      "One-on-one or small group sessions tailored entirely to you. Celebrate special occasions or simply treat yourself.",
     href: "/workshops",
-    image: "/group-coffee-workshop-people-learning-barista-skil.jpg",
-    cta: "View Schedule & Book",
-    highlights: ["From €55 per person", "2-4 people per session", "Weekly sessions available"],
-    bestFor: "Individuals & Small Groups",
+    image: "/privateevent.jpg",
+    cta: "Plan Your Experience",
+    highlights: ["Fully customizable", "1-6 people", "Flexible scheduling"],
+    bestFor: "Special Occasions & Personal Learning",
   },
   {
     title: "Corporate Events",
@@ -20,39 +20,28 @@ const offerings = [
     description:
       "Engage your team with hands-on coffee experiences. We customize every session to your group size and goals.",
     href: "/corporate",
-    image: "/corporate-team-building-coffee-event-professional-.jpg",
+    image: "/corporate.png",
     cta: "Request a Quote",
     highlights: ["Tailored to your team", "10-50+ participants", "On-site or at our studio"],
     bestFor: "Companies & Organizations",
-  },
-  {
-    title: "Private Sessions",
-    tagline: "Your own coffee journey",
-    description:
-      "One-on-one or small group sessions tailored entirely to you. Celebrate special occasions or simply treat yourself.",
-    href: "/private",
-    image: "/private-coffee-lesson-espresso-machine-intimate-se.jpg",
-    cta: "Plan Your Experience",
-    highlights: ["Fully customizable", "1-6 people", "Flexible scheduling"],
-    bestFor: "Special Occasions & Personal Learning",
   },
 ]
 
 export function Offerings() {
   return (
     <section className="py-24 lg:py-32 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="max-w-2xl mb-16">
           <p className="text-sm font-medium uppercase tracking-widest text-accent mb-3">Choose Your Experience</p>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground leading-tight text-balance">
-            Three Ways to Learn Coffee
+            Two Ways to Learn Coffee
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
             Not sure which is right for you? Here's a quick guide to help you find the perfect fit.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {offerings.map((offering) => (
             <div
               key={offering.title}

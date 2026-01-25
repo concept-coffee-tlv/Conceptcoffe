@@ -125,3 +125,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Alternative teal + brown palette for client preview */
+html.theme-teal {
+  --background: oklch(0.98 0.01 180) !important;
+  --foreground: oklch(0.22 0.04 180) !important;
+  --card: oklch(1 0 0) !important;
+  --card-foreground: oklch(0.22 0.04 180) !important;
+  --popover: oklch(1 0 0) !important;
+  --popover-foreground: oklch(0.22 0.04 180) !important;
+  --primary: oklch(0.35 0.08 180) !important;  /* #005A59 dark teal */
+  --primary-foreground: oklch(0.98 0.01 180) !important;
+  --secondary: oklch(0.80 0.04 180) !important;  /* #99c8c8 light teal */
+  --secondary-foreground: oklch(0.22 0.04 180) !important;
+  --muted: oklch(0.92 0.02 180) !important;
+  --muted-foreground: oklch(0.45 0.03 180) !important;
+  --accent: oklch(0.48 0.08 55) !important;  /* #8b5e3d brown */
+  --accent-foreground: oklch(0.98 0.01 180) !important;
+  --border: oklch(0.85 0.03 180) !important;
+  --input: oklch(0.85 0.03 180) !important;
+  --ring: oklch(0.35 0.08 180) !important;
+}
+
+/* Alternative teal only palette for client preview */
+html.theme-teal-only {
+  --background: oklch(0.98 0.01 180) !important;
+  --foreground: oklch(0.22 0.04 180) !important;
+  --card: oklch(1 0 0) !important;
+  --card-foreground: oklch(0.22 0.04 180) !important;
+  --popover: oklch(1 0 0) !important;
+  --popover-foreground: oklch(0.22 0.04 180) !important;
+  --primary: oklch(0.35 0.08 180) !important;  /* #005A59 dark teal */
+  --primary-foreground: oklch(0.98 0.01 180) !important;
+  --secondary: oklch(0.80 0.04 180) !important;  /* #99c8c8 light teal */
+  --secondary-foreground: oklch(0.22 0.04 180) !important;
+  --muted: oklch(0.92 0.02 180) !important;
+  --muted-foreground: oklch(0.45 0.03 180) !important;
+  --accent: oklch(0.35 0.08 180) !important;  /* #005A59 dark teal */
+  --accent-foreground: oklch(0.98 0.01 180) !important;
+  --border: oklch(0.85 0.03 180) !important;
+  --input: oklch(0.85 0.03 180) !important;
+  --ring: oklch(0.35 0.08 180) !important;
+}

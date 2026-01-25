@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export function CTA() {
   return (
     <section className="py-24 lg:py-32 bg-accent text-accent-foreground">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-12 text-center">
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
           Ready to Start Your Coffee Journey?
         </h2>
