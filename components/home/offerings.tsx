@@ -9,7 +9,7 @@ const offerings = [
     description:
       "One-on-one or small group sessions tailored entirely to you. Celebrate special occasions or simply treat yourself.",
     href: "/workshops",
-    image: "/privateevent.jpg",
+    image: "/privateevent.JPG",
     cta: "Plan Your Experience",
     highlights: ["Fully customizable", "1-6 people", "Flexible scheduling"],
     bestFor: "Special Occasions & Personal Learning",
