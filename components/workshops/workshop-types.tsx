@@ -121,7 +121,7 @@ export function WorkshopBooking() {
 
         <Script
           src="https://widget.monkeybook.io/widget.js?account=695c2746b187ec242a817de4"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
       </div>
     </section>

@@ -23,12 +23,6 @@ const reviews = [
     date: "2 weeks ago",
   },
   {
-    author: "Dahna Segal",
-    rating: 5,
-    text: "I booked a private workshop for my partner's birthday and Evan made sure we had the BEST experience! He built a workshop tailored to what I requested from him prior to suit the experience we already had and enrich us with the information we were interested in. The space, the presentation, the teachings and the hand on tasting was all delivered in a highly professional, passionate and enjoyable way. Afterwards he even let us stay a little longer and gave my partner some extra pro tips on his coffee making. It was truly beyond! If you are looking for any kind of coffee activity I recommend for you to reach out to Evan and let him build you an amazing experience!",
-    date: "1 month ago",
-  },
-  {
     author: "Asher Ackman",
     rating: 5,
     text: "If anyone is interested at all in coffee and culture, Concept Coffee is a must. The studio is beautiful and the owner is one of the most knowledgeable people about coffee I have ever met. He explained everything so well and it's clear how passionate he is about the subject. The workshop was a very basic introduction to coffee and how we interact with it but I still walked away with a much better understanding about coffee and taste than I previously had. Would absolutely come again next time I'm here.",
@@ -77,7 +71,7 @@ export function GoogleReviews() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 auto-rows-fr">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 auto-rows-fr">
           {reviews.map((review, index) => (
             <div
               key={index}

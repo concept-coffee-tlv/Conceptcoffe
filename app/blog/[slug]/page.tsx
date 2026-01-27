@@ -46,12 +46,30 @@ const renderOptions = {
       </blockquote>
     ),
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-      const { url, title } = node.data.target.fields.file
-      const imageUrl = `https:${url}`
+      const { url, title, contentType } = node.data.target.fields.file
+      const assetUrl = `https:${url}`
+
+      // Check if the asset is a video
+      if (contentType && contentType.startsWith("video/")) {
+        return (
+          <div className="my-10 relative w-full aspect-[16/9] rounded-xl overflow-hidden">
+            <video
+              src={assetUrl}
+              controls
+              className="w-full h-full object-cover"
+              playsInline
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        )
+      }
+
+      // Default to image rendering
       return (
         <div className="my-10 relative w-full aspect-[16/9] rounded-xl overflow-hidden">
           <Image
-            src={imageUrl}
+            src={assetUrl}
             alt={title || "Blog image"}
             fill
             className="object-cover"
