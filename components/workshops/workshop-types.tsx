@@ -190,7 +190,7 @@ export function WorkshopTypes({ onBookClick }: { onBookClick: () => void }) {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">
-            Don't see what you're looking for?
+            Don't see what you're looking for? 
           </p>
           <Button
             asChild
