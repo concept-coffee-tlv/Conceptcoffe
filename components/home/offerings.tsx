@@ -7,7 +7,7 @@ const offerings = [
     title: "Private Sessions",
     tagline: "Your own coffee journey",
     description:
-      "One-on-one or small group sessions tailored entirely to you. Celebrate special occasions or simply treat yourself.",
+      "One-on-one or small group coffee experiences. Chose from an available workshop of have one tailored for you, your questions, and your pace. Perfect for curious beginners, enthusiastic home brewers, and even coffee professionals.",
     href: "/workshops",
     image: "/privateevent.JPG",
     cta: "Plan Your Experience",
@@ -18,9 +18,9 @@ const offerings = [
     title: "Corporate Events",
     tagline: "Team building with a twist",
     description:
-      "Engage your team with hands-on coffee experiences. We customize every session to your group size and goals.",
+      "Hands-on, team-friendly coffee experiences that spark conversation and connection.",
     href: "/corporate",
-    image: "/corporate.png",
+    image: "/corporate2.jpeg",
     cta: "Request a Quote",
     highlights: ["Tailored to your team", "10-50+ participants", "On-site or at our studio"],
     bestFor: "Companies & Organizations",
@@ -45,7 +45,7 @@ export function Offerings() {
           {offerings.map((offering) => (
             <div
               key={offering.title}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all hover:border-accent/50"
+              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all hover:border-accent/50 flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img
@@ -62,9 +62,9 @@ export function Offerings() {
               <div className="p-6 lg:p-8">
                 <p className="text-sm font-medium text-accent mb-1">{offering.tagline}</p>
                 <h3 className="font-serif text-2xl font-bold text-foreground mb-3">{offering.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">{offering.description}</p>
+                <p className="text-muted-foreground leading-relaxed min-h-[150px]">{offering.description}</p>
 
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mt-4 mb-6">
                   {offering.highlights.map((highlight, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-foreground">
                       <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />

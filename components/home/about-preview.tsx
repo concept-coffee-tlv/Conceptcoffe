@@ -23,18 +23,17 @@ export function AboutPreview() {
           <div>
             <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">Meet The Roaster</p>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground leading-tight">
-              Hi, I'm Evan
+              Hi, I'm Evan 👋
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              concept:coffee is my passion project turned small business with big dreams. With over half a decade of experience in coffee and a Specialty Coffee Association roasting certification, I noticed a growing gap between coffee geeks and everyday coffee drinkers.
+              Concept:Coffee might look like a brand, but behind the scenes it’s very much a one-man show. I source and roast all the coffees for our workshops, design and lead the experiences, answer the messages—and yes, I’m also the one taking out the trash at the end of the day.
             </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              At concept:coffee, we believe in empowering everyday coffee drinkers through accessible specialty coffee education. A more informed coffee drinker is a better coffee drinker, and coffee is always best when shared.
+            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+              Concept:Coffee was built to make specialty coffee feel accessible, welcoming, and worth caring about. With years of hands-on experience and an SCA roasting certification, my goal is simple: empower everyday coffee drinkers with the knowledge they need to enjoy better coffee—together.
             </p>
             <Button
               asChild
-              variant="outline"
-              className="mt-8 border-foreground text-foreground hover:bg-foreground hover:text-background bg-transparent"
+              className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
             >
               <Link href="/about">Learn More About Us</Link>
             </Button>

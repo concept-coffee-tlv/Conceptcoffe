@@ -31,17 +31,14 @@ export default function CorporatePage() {
                   Corporate Events
                 </p>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Rethink what you know about coffee!
+                  Elevate your next team experience through coffee.
                 </h1>
                 <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Embark on an engaging guided tasting tour through coffee production.
+                    Our corporate workshops are guided tasting experiences designed to encourage collaboration, curiosity, and shared learning. Teams explore the journey of coffee from cultivation to cup while tasting a curated selection of coffees roasted specifically for the session.
                   </p>
                   <p>
-                    Learn about coffee cultivation and processing while sampling unique and exotic coffees roasted just for you!
-                  </p>
-                  <p>
-                    Perfect for team building, happy hours, sparking curiosity and connection. Coffee: A Concept is the perfect brew of learning, team building, and inspiration.
+                    Ideal for team building, off-sites, and hosted happy hours, Coffee: A Concept creates meaningful connection through a structured, engaging learning experience  leaving teams more connected, inspired, and energized!
                   </p>
                 </div>
                 <div className="mt-10">
@@ -57,17 +54,30 @@ export default function CorporatePage() {
                 </div>
               </div>
 
-              {/* Right side - Video */}
-              <div className="rounded-xl overflow-hidden">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-auto"
-                >
-                  <source src="/videos/corporate.mov" type="video/mp4" />
-                </video>
+              {/* Right side - Videos */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/videos/corporate.mov" type="video/mp4" />
+                  </video>
+                </div>
+                <div className="rounded-xl overflow-hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/videos/corporatevideo2.MOV" type="video/mp4" />
+                  </video>
+                </div>
               </div>
             </div>
           </div>

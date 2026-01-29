@@ -33,7 +33,7 @@ export function Hero() {
           </div>
 
           <Image
-            src="/images/concept-20coffee-20logo.avif"
+            src="/conceptcoffeelogo.png"
             alt="Concept:Coffee"
             width={600}
             height={150}
@@ -41,7 +41,10 @@ export function Hero() {
             priority
           />
           <p className="mt-6 text-lg md:text-xl text-background/90 leading-relaxed max-w-xl mx-auto">
-          COFFEE IS BETTER WHEN SHARED
+          Coffee education & experiences for everyday coffee drinkers.
+          </p>
+          <p className="mt-4 text-base text-background/70 leading-relaxed max-w-lg mx-auto">
+            Workshops, tastings, and team experiences that help you understand, taste, and brew better coffee.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
@@ -51,7 +54,7 @@ export function Hero() {
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base"
             >
               <Link href="/workshops">
-                Book a Workshop
+                View Workshops
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -61,17 +64,8 @@ export function Hero() {
               variant="outline"
               className="border-background text-background hover:bg-background/10 font-medium bg-transparent"
             >
-              <Link href="/corporate">For Companies</Link>
+              <Link href="/corporate">Plan a Private or Corporate Workshop</Link>
             </Button>
-          </div>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-background/80">
-            <Link href="/workshops" className="hover:text-background underline-offset-4 hover:underline">
-              Workshops
-            </Link>
-            <Link href="/corporate" className="hover:text-background underline-offset-4 hover:underline">
-              Corporate Events
-            </Link>
           </div>
         </div>
       </div>

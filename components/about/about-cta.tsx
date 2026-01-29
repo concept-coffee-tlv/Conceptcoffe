@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function AboutCTA() {
   return (
-    <section className="py-24 lg:py-32 bg-background">
+    <section className="py-16 lg:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Come Learn With Us</h2>

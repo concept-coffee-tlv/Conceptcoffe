@@ -10,7 +10,7 @@ const navigation = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Privacy Policy", href: "/policy" },
+    { name: "Policies", href: "/policy" },
   ],
 }
 
@@ -23,7 +23,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
               <Image
-                src="/images/concept-20coffee-20logo.avif"
+                src="/conceptcoffeelogo.png"
                 alt="concept:coffee"
                 width={200}
                 height={53}

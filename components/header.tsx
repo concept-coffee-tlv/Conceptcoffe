@@ -12,7 +12,7 @@ const navigation = [
   { name: "Community", href: "/community" },
   { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/#contact" },
 ]
 
 export function Header() {
@@ -23,7 +23,7 @@ export function Header() {
       <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/concept-20coffee-20logo.avif"
+            src="/conceptcoffeelogo.png"
             alt="concept:coffee"
             width={180}
             height={48}

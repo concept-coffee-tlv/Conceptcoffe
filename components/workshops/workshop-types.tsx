@@ -1,6 +1,8 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Clock, Users, ArrowRight } from "lucide-react"
@@ -11,14 +13,14 @@ const workshops = [
     title: "Tasting",
     image: "/images/tasting.avif",
     description:
-      "Our most accessible workshop—designed for everyday coffee lovers who are ready to go beyond the buzz. No prior knowledge needed.",
+      "A hands-on barista workshop focused on espresso and milk fundamentals. Learn how to dial in shots, steam milk properly, and make better coffee at home using professional equipment.",
     highlights: [
       "Flavor profiling basics",
       "Origin and processing impact",
       "Guided tasting of 3–5 brews",
     ],
     duration: "90 minutes",
-    groupSize: "1-6 people",
+    groupSize: "1-12 people",
     level: "Beginner",
   },
   {
@@ -33,7 +35,7 @@ const workshops = [
       "Milk steaming and latte art",
     ],
     duration: "2 hours",
-    groupSize: "1-4 people",
+    groupSize: "1-12 people",
     level: "Beginner",
   },
   {
@@ -41,14 +43,14 @@ const workshops = [
     title: "Roasting",
     image: "/images/roasting.avif",
     description:
-      "From green bean to roasted brilliance—demystify the roasting process and discover how it shapes everything you taste in the cup.",
+      "An introduction to coffee roasting, from green beans to finished roast. Learn how time and temperature affect flavor, build a profile, roast, and take home your freshly roasted coffee!",
     highlights: [
-      "Time, temperature, and technique",
-      "Light, medium, and dark profiles",
-      "Take home fresh-roasted coffee",
+      "Learn the pros art of coffee roasting! ",
+      "Understand how coffee changes as it roasts",
+      "Roast your own coffee to take home",
     ],
     duration: "2 hours",
-    groupSize: "1-4 people",
+    groupSize: "1-6 people",
     level: "Beginner",
   },
   {
@@ -56,14 +58,14 @@ const workshops = [
     title: "Cupping",
     image: "/images/cupping.avif",
     description:
-      "The professional tasting method used in sourcing and quality control. Build your palate and gain confidence describing what's in your cup.",
+      "Learn the professional coffee tasting method used worldwide. Taste 4–5 coffees side by side, understand acidity, body, and balance, and develop a clear, confident tasting vocabulary.",
     highlights: [
       "Aroma, acidity, body, and balance",
       "Cup 4–5 coffees side-by-side",
       "Develop your tasting vocabulary",
     ],
-    duration: "2 hours",
-    groupSize: "2-6 people",
+    duration: "1.5 hours",
+    groupSize: "1-12 people",
     level: "All Levels",
   },
   {
@@ -71,14 +73,14 @@ const workshops = [
     title: "Custom",
     image: "/images/custom.avif",
     description:
-      "Completely customizable and scheduled at a time that works for you. We'll guide you step by step through your chosen focus.",
+      "Customizable workshop built around you. Choose from one, or many topics espresso, brewing, cupping, or tasting — with flexible scheduling and format for individuals or groups.",
     highlights: [
       "Espresso, latte art, or filter",
       "Cupping and sensory training",
       "Flexible timing and format",
     ],
     duration: "Flexible",
-    groupSize: "1-6 people",
+    groupSize: "1-12 people",
     level: "All Levels",
   },
 ]
@@ -93,7 +95,7 @@ export function WorkshopHero() {
             Your Personal Coffee Journey
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Choose the experience that speaks to you. Each workshop is fully customizable and tailored to your group's level, interests, and pace.
+            Choose the experience that speaks to you, or build something unique! Each workshop is fully tailored to your group's level, interests, and pace.
           </p>
         </div>
       </div>
@@ -101,7 +103,9 @@ export function WorkshopHero() {
   )
 }
 
-export function WorkshopBooking() {
+export function WorkshopBooking({ show }: { show: boolean }) {
+  if (!show) return null
+
   return (
     <section id="book" className="py-24 lg:py-32 bg-secondary">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
@@ -128,7 +132,7 @@ export function WorkshopBooking() {
   )
 }
 
-export function WorkshopTypes() {
+export function WorkshopTypes({ onBookClick }: { onBookClick: () => void }) {
   return (
     <section className="py-24 lg:py-32 bg-background">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
@@ -137,11 +141,11 @@ export function WorkshopTypes() {
           <p className="mt-2 text-muted-foreground">Choose a workshop and book your private session</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {workshops.map((workshop) => (
             <div
               key={workshop.id}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/50 transition-all"
+              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/50 transition-all w-full lg:w-[calc(33.333%-1.34rem)]"
             >
               <div className="aspect-[16/9] overflow-hidden relative">
                 <Image
@@ -153,8 +157,8 @@ export function WorkshopTypes() {
               </div>
               <div className="p-6 lg:p-8">
                 <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-4">{workshop.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">{workshop.description}</p>
-                <ul className="space-y-1.5 mb-6">
+                <p className="text-muted-foreground leading-relaxed min-h-[130px]">{workshop.description}</p>
+                <ul className="space-y-1.5 mt-4 mb-6">
                   {workshop.highlights.map((highlight, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
@@ -172,17 +176,51 @@ export function WorkshopTypes() {
                     <span>{workshop.groupSize}</span>
                   </div>
                 </div>
-                <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                  <a href="#book">
-                    Book This Workshop
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                <Button
+                  onClick={onBookClick}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  Book This Workshop
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-muted-foreground mb-4">
+            Don't see what you're looking for?
+          </p>
+          <Button
+            asChild
+            variant="outline"
+            className="font-medium"
+          >
+            <Link href="https://wa.me/972584001289" target="_blank" rel="noopener noreferrer">
+              Contact Us
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
+  )
+}
+
+export function WorkshopsContent() {
+  const [showBooking, setShowBooking] = useState(false)
+
+  const handleBookClick = () => {
+    setShowBooking(true)
+    setTimeout(() => {
+      document.getElementById("book")?.scrollIntoView({ behavior: "smooth" })
+    }, 100)
+  }
+
+  return (
+    <>
+      <WorkshopTypes onBookClick={handleBookClick} />
+      <WorkshopBooking show={showBooking} />
+    </>
   )
 }

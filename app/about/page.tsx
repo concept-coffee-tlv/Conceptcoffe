@@ -4,6 +4,7 @@ import { AboutHero } from "@/components/about/about-hero"
 import { AboutStory } from "@/components/about/about-story"
 import { AboutValues } from "@/components/about/about-values"
 import { AboutCTA } from "@/components/about/about-cta"
+import { AboutSeenOn } from "@/components/about/about-seen-on"
 
 export const metadata = {
   title: "About Us | concept:coffee",
@@ -19,6 +20,7 @@ export default function AboutPage() {
         <AboutHero />
         <AboutStory />
         <AboutValues />
+        <AboutSeenOn />
         <AboutCTA />
       </main>
       <Footer />

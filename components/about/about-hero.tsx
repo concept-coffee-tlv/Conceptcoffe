@@ -1,6 +1,6 @@
 export function AboutHero() {
   return (
-    <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-secondary">
+    <section className="pt-32 pb-8 lg:pt-40 lg:pb-12 bg-secondary">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">The Full Story</p>

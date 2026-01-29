@@ -5,7 +5,8 @@ import { Offerings } from "@/components/home/offerings"
 import { AboutPreview } from "@/components/home/about-preview"
 import { GoogleReviews } from "@/components/home/google-reviews"
 import { CTA } from "@/components/home/cta"
-import { ThemeSwitcher } from "@/components/theme-switcher"
+import { FAQ } from "@/components/home/faq"
+import { LocationMap } from "@/components/location-map"
 
 export default function HomePage() {
   return (
@@ -17,9 +18,10 @@ export default function HomePage() {
         <AboutPreview />
         <GoogleReviews />
         <CTA />
+        <FAQ />
+        <LocationMap showContactInfo />
       </main>
       <Footer />
-      <ThemeSwitcher />
     </>
   )
 }

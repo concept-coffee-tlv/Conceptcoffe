@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { WorkshopHero, WorkshopTypes, WorkshopBooking } from "@/components/workshops/workshop-types"
+import { WorkshopHero, WorkshopsContent } from "@/components/workshops/workshop-types"
 
 export const metadata = {
   title: "Coffee Workshops | concept:coffee",
@@ -14,8 +14,7 @@ export default function WorkshopsPage() {
       <Header />
       <main>
         <WorkshopHero />
-        <WorkshopTypes />
-        <WorkshopBooking />
+        <WorkshopsContent />
       </main>
       <Footer />
     </>

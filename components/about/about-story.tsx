@@ -1,6 +1,6 @@
 export function AboutStory() {
   return (
-    <section className="py-24 lg:py-32 bg-background">
+    <section className="py-16 lg:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1">
@@ -18,7 +18,7 @@ export function AboutStory() {
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
               <img
-                src="/evan.avif"
+                src="/aboutus.jpg"
                 alt="Evan, founder of concept:coffee"
                 className="w-full h-full object-cover"
               />
