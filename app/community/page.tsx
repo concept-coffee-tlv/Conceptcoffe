@@ -58,7 +58,7 @@ export default function CommunityPage() {
                   playsInline
                   className="w-full h-auto"
                 >
-                  <source src="/videos/community.mov" type="video/mp4" />
+                  <source src="/videos/community.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>

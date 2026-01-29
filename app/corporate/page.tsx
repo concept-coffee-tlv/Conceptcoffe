@@ -64,7 +64,7 @@ export default function CorporatePage() {
                     playsInline
                     className="w-full h-full object-cover"
                   >
-                    <source src="/videos/corporate.mov" type="video/mp4" />
+                    <source src="/videos/corporate.mp4" type="video/mp4" />
                   </video>
                 </div>
                 <div className="rounded-xl overflow-hidden">
@@ -75,7 +75,7 @@ export default function CorporatePage() {
                     playsInline
                     className="w-full h-full object-cover"
                   >
-                    <source src="/videos/corporatevideo2.MOV" type="video/mp4" />
+                    <source src="/videos/corporatevideo2.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>
