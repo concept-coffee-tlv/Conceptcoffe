@@ -184,6 +184,15 @@
     "en": "English",
     "he": "עברית"
   },
+  "blogPage": {
+    "eyebrow": "בלוג",
+    "title": "סיפורים ותובנות",
+    "subtitle": "סיפורים, תובנות ועדכונים ממסע הקפה שלנו",
+    "noPosts": "אין עדיין פוסטים בבלוג. בדקו שוב בקרוב!",
+    "backToBlog": "חזרה לבלוג",
+    "metaTitle": "בלוג | concept:coffee",
+    "metaDescription": "סיפורים, תובנות ועדכונים ממסע הקפה שלנו."
+  },
   "workshopsPage": {
     "eyebrow": "מפגשים פרטיים",
     "title": "מסע הקפה האישי שלך",

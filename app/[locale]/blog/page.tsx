@@ -1,18 +1,33 @@
+import { setRequestLocale } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { getAllBlogPosts } from "@/lib/contentful"
-import Link from "next/link"
+import { Link } from "@/src/i18n/navigation"
 import Image from "next/image"
 import { format } from "date-fns"
 
 export const revalidate = 60 // Revalidate every 60 seconds
 
-export const metadata = {
-  title: "Blog | concept:coffee",
-  description: "Stories, insights, and updates from our coffee journey.",
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "blogPage" })
+
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  }
 }
 
-export default async function BlogPage() {
+type Props = {
+  params: Promise<{ locale: string }>
+}
+
+export default async function BlogPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
+  const t = await getTranslations({ locale, namespace: "blogPage" })
   const posts = await getAllBlogPosts()
 
   return (
@@ -22,12 +37,12 @@ export default async function BlogPage() {
         <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-secondary">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">Blog</p>
+              <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">{t("eyebrow")}</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Stories & Insights
+                {t("title")}
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Stories, insights, and updates from our coffee journey
+                {t("subtitle")}
               </p>
             </div>
           </div>
@@ -38,7 +53,7 @@ export default async function BlogPage() {
             {posts.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-muted-foreground">
-                  No blog posts yet. Check back soon!
+                  {t("noPosts")}
                 </p>
               </div>
             ) : (
@@ -57,7 +72,7 @@ export default async function BlogPage() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="p-6">
+                    <div className="p-6" dir="ltr">
                       <p className="text-xs text-accent font-medium uppercase tracking-wider mb-2">
                         {format(new Date(post.publishedDate), "MMMM d, yyyy")}
                       </p>

@@ -184,6 +184,15 @@
     "en": "English",
     "he": "עברית"
   },
+  "blogPage": {
+    "eyebrow": "Blog",
+    "title": "Stories & Insights",
+    "subtitle": "Stories, insights, and updates from our coffee journey",
+    "noPosts": "No blog posts yet. Check back soon!",
+    "backToBlog": "Back to Blog",
+    "metaTitle": "Blog | concept:coffee",
+    "metaDescription": "Stories, insights, and updates from our coffee journey."
+  },
   "workshopsPage": {
     "eyebrow": "Private Sessions",
     "title": "Your Personal Coffee Journey",
