@@ -1,17 +1,23 @@
+"use client"
+
+import { useTranslations } from "next-intl"
+
 export function AboutStory() {
+  const t = useTranslations("aboutPage")
+
   return (
     <section className="py-16 lg:py-20 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Meet The Roaster</h2>
-            <p className="text-xl text-foreground font-medium mt-2">Hi, I'm Evan.</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">{t("meetTheRoaster")}</h2>
+            <p className="text-xl text-foreground font-medium mt-2">{t("evanIntro")}</p>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                concept:coffee is my passion project turned small business with big dreams. With over half a decade of experience in coffee and a Specialty Coffee Association roasting certification, I noticed a growing gap between coffee geeks and everyday coffee drinkers, and a lack of an organizer in the specialty coffee community.
+                {t("evanBio")}
               </p>
               <p>
-                At concept:coffee, we believe in empowering everyday coffee drinkers through accessible specialty coffee education. A more informed coffee drinker is a better coffee drinker, and coffee is always best when shared.
+                {t("evanMission")}
               </p>
             </div>
           </div>
@@ -25,7 +31,7 @@ export function AboutStory() {
             </div>
             <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg">
               <p className="font-serif text-lg font-bold">Evan</p>
-              <p className="text-sm text-primary-foreground/80">Founder & Roaster</p>
+              <p className="text-sm text-primary-foreground/80">{t("evanRole")}</p>
             </div>
           </div>
         </div>

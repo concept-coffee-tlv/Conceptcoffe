@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WorkshopHero, WorkshopsContent } from "@/components/workshops/workshop-types"
@@ -8,7 +9,14 @@ export const metadata = {
     "Hands-on coffee workshops in Tel Aviv. Learn tasting, barista skills, roasting, cupping and more in personalized sessions.",
 }
 
-export default function WorkshopsPage() {
+type Props = {
+  params: Promise<{ locale: string }>
+}
+
+export default async function WorkshopsPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <>
       <Header />

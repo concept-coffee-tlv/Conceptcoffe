@@ -1,40 +1,7 @@
+"use client"
+
 import { Star } from "lucide-react"
-
-// OPTION 1: Static reviews (current implementation)
-// You can manually copy reviews from your Google Business Profile here.
-// To find your reviews: Go to Google Maps > Search your business > Click on reviews
-//
-// OPTION 2: Google Places API (requires setup)
-// 1. Create a Google Cloud project at https://console.cloud.google.com
-// 2. Enable the "Places API"
-// 3. Create an API key and add it to .env.local as GOOGLE_PLACES_API_KEY
-// 4. Get your Place ID from: https://developers.google.com/maps/documentation/places/web-service/place-id
-// Note: Google Places API only returns the 5 most recent reviews
-//
-// OPTION 3: Third-party widgets (easiest)
-// Services like Elfsight, Trustindex, or EmbedSocial provide embeddable review widgets
-// that handle all the API complexity. They offer free tiers with branding.
-
-const reviews = [
-  {
-    author: "Lynn Burris",
-    rating: 5,
-    text: "Had the pleasure of participating in a coffee workshop at Concept Coffee today. I was a bit skeptical at first, I don't think of myself as a huge coffee person, but I was blown away. Evan is so knowledgeable and he made the topic interesting and approachable. I never really thought much about where my coffee was coming from, how it started out or why it tasted bitter, acidic or a specific flavor. I am going to be paying more attention next time I go to a coffee shop! Thank you Evan!",
-    date: "2 weeks ago",
-  },
-  {
-    author: "Asher Ackman",
-    rating: 5,
-    text: "If anyone is interested at all in coffee and culture, Concept Coffee is a must. The studio is beautiful and the owner is one of the most knowledgeable people about coffee I have ever met. He explained everything so well and it's clear how passionate he is about the subject. The workshop was a very basic introduction to coffee and how we interact with it but I still walked away with a much better understanding about coffee and taste than I previously had. Would absolutely come again next time I'm here.",
-    date: "1 month ago",
-  },
-  {
-    author: "Amit Avner",
-    rating: 5,
-    text: "Evan's passion and expertise for coffee are truly inspiring! I attended a private coffee cupping and latte art workshop and was amazed by how much I learned in such a short time. We explored a variety of unique coffees, each one with its own distinct flavor and story, and Evan guided us through the experience with patience, knowledge, and enthusiasm. The atmosphere was warm and welcoming, making the whole session both educational and fun. I can't recommend enough!",
-    date: "2 months ago",
-  },
-]
+import { useTranslations } from "next-intl"
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -52,6 +19,29 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export function GoogleReviews() {
+  const t = useTranslations("reviews")
+
+  const reviews = [
+    {
+      author: t("review1.author"),
+      rating: 5,
+      text: t("review1.text"),
+      date: "2 weeks ago",
+    },
+    {
+      author: t("review2.author"),
+      rating: 5,
+      text: t("review2.text"),
+      date: "1 month ago",
+    },
+    {
+      author: t("review3.author"),
+      rating: 5,
+      text: t("review3.text"),
+      date: "2 months ago",
+    },
+  ]
+
   return (
     <section className="py-24 lg:py-32 bg-muted/30">
       <div className="mx-auto px-6 lg:px-16">
@@ -68,7 +58,7 @@ export function GoogleReviews() {
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            <span className="text-lg font-medium">Google Reviews</span>
+            <span className="text-lg font-medium">{t("googleReviews")}</span>
           </a>
           <a
             href="https://www.google.com/maps/place/Concept:Coffee+Studio+%26+Workshops/@32.0562859,34.754659,17z/data=!3m1!4b1!4m6!3m5!1s0x212ebe62334120d5:0x77486206dc73675a!8m2!3d32.0562814!4d34.7572339!16s%2Fg%2F11wflmy036?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
@@ -77,7 +67,7 @@ export function GoogleReviews() {
             className="flex items-center justify-center gap-2 hover:opacity-80 transition-opacity"
           >
             <StarRating rating={5} />
-            <span className="text-2xl font-bold">5.0</span>
+            <span className="text-2xl font-bold">{t("rating")}</span>
           </a>
         </div>
 
@@ -105,7 +95,7 @@ export function GoogleReviews() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
-            See all reviews on Google
+            {t("seeAllReviews")}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>

@@ -1,8 +1,13 @@
-import Link from "next/link"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { Link } from "@/src/i18n/navigation"
 import { MapPin, Phone, Mail, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function LocationMap({ showContactInfo = false }: { showContactInfo?: boolean }) {
+  const t = useTranslations("contact")
+
   if (showContactInfo) {
     return (
       <section id="contact" className="py-24 lg:py-32 bg-secondary">
@@ -10,9 +15,9 @@ export function LocationMap({ showContactInfo = false }: { showContactInfo?: boo
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left side - Contact info */}
             <div>
-              <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">Find Us</p>
+              <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">{t("sectionTitle")}</p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-                Visit Our Studio
+                {t("title")}
               </h2>
               <div className="mt-8 space-y-6">
                 <div className="flex items-start gap-4">
@@ -20,8 +25,8 @@ export function LocationMap({ showContactInfo = false }: { showContactInfo?: boo
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Location</h3>
-                    <p className="text-muted-foreground">Yonatan Ratosh 2, Tel Aviv–Yafo</p>
+                    <h3 className="font-semibold text-foreground">{t("location")}</h3>
+                    <p className="text-muted-foreground">{t("address")}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -29,7 +34,7 @@ export function LocationMap({ showContactInfo = false }: { showContactInfo?: boo
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Phone</h3>
+                    <h3 className="font-semibold text-foreground">{t("phone")}</h3>
                     <a href="tel:+972584001289" className="text-muted-foreground hover:text-accent transition-colors">
                       058-400-1289
                     </a>
@@ -40,7 +45,7 @@ export function LocationMap({ showContactInfo = false }: { showContactInfo?: boo
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Email</h3>
+                    <h3 className="font-semibold text-foreground">{t("email")}</h3>
                     <a href="mailto:evan@concept-coffee.com" className="text-muted-foreground hover:text-accent transition-colors">
                       evan@concept-coffee.com
                     </a>
@@ -53,9 +58,9 @@ export function LocationMap({ showContactInfo = false }: { showContactInfo?: boo
                   size="lg"
                   className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
                 >
-                  <Link href="https://wa.me/972584001289" target="_blank" rel="noopener noreferrer">
-                    WhatsApp
-                  </Link>
+                  <a href="https://wa.me/972584001289" target="_blank" rel="noopener noreferrer">
+                    {t("whatsapp")}
+                  </a>
                 </Button>
                 <Button
                   asChild
@@ -63,10 +68,10 @@ export function LocationMap({ showContactInfo = false }: { showContactInfo?: boo
                   variant="outline"
                   className="font-semibold"
                 >
-                  <Link href="https://www.instagram.com/conceptcoffee_tlv" target="_blank" rel="noopener noreferrer">
-                    <Instagram className="mr-2 h-5 w-5" />
-                    Instagram
-                  </Link>
+                  <a href="https://www.instagram.com/conceptcoffee_tlv" target="_blank" rel="noopener noreferrer">
+                    <Instagram className="me-2 h-5 w-5" />
+                    {t("instagram")}
+                  </a>
                 </Button>
               </div>
             </div>
@@ -94,12 +99,12 @@ export function LocationMap({ showContactInfo = false }: { showContactInfo?: boo
     <section className="py-24 lg:py-32 bg-secondary">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="text-center mb-12">
-          <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">Find Us</p>
+          <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">{t("sectionTitle")}</p>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-            Visit Our Studio
+            {t("title")}
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Yonatan Ratosh 2, Tel Aviv–Yafo
+            {t("address")}
           </p>
         </div>
         <div className="rounded-xl overflow-hidden">

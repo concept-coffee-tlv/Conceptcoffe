@@ -1,22 +1,25 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
-
-const navigation = [
-  { name: "Workshops", href: "/workshops" },
-  { name: "Corporate", href: "/corporate" },
-  { name: "Community", href: "/community" },
-  { name: "Blog", href: "/blog" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/#contact" },
-]
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const t = useTranslations("navigation")
+
+  const navigation = [
+    { name: t("workshops"), href: "/workshops" },
+    { name: t("corporate"), href: "/corporate" },
+    { name: t("community"), href: "/community" },
+    { name: t("blog"), href: "/blog" },
+    { name: t("about"), href: "/about" },
+    { name: t("contact"), href: "/#contact" },
+  ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -43,24 +46,28 @@ export function Header() {
               {item.name}
             </Link>
           ))}
+          <LanguageSwitcher />
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-            <Link href="/workshops#booking">Book Now</Link>
+            <Link href="/workshops#booking">{t("bookNow")}</Link>
           </Button>
         </div>
 
         {/* Mobile menu button */}
-        <button
-          type="button"
-          className="lg:hidden -m-2.5 p-2.5 text-foreground"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span className="sr-only">Toggle menu</span>
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" aria-hidden="true" />
-          ) : (
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          )}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className="-m-2.5 p-2.5 text-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span className="sr-only">{t("toggleMenu")}</span>
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6" aria-hidden="true" />
+            )}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -78,7 +85,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
-              <Link href="/workshops#booking">Book Now</Link>
+              <Link href="/workshops#booking">{t("bookNow")}</Link>
             </Button>
           </div>
         </div>
