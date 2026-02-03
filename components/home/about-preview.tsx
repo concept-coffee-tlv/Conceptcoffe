@@ -1,7 +1,12 @@
-import Link from "next/link"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
 
 export function AboutPreview() {
+  const t = useTranslations("meetEvan")
+
   return (
     <section className="py-24 lg:py-32 bg-secondary">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
@@ -14,28 +19,28 @@ export function AboutPreview() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground p-6 rounded-lg max-w-[200px]">
+            <div className="absolute -bottom-6 -end-6 bg-accent text-accent-foreground p-6 rounded-lg max-w-[200px]">
               <p className="font-serif text-3xl font-bold">5+</p>
-              <p className="text-sm mt-1">Years of Experience</p>
+              <p className="text-sm mt-1">{t("badge")}</p>
             </div>
           </div>
 
           <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">Meet The Roaster</p>
+            <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">{t("eyebrow")}</p>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground leading-tight">
-              Hi, I'm Evan 👋
+              {t("title")}
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Concept:Coffee might look like a brand, but behind the scenes it’s very much a one-man show. I source and roast all the coffees for our workshops, design and lead the experiences, answer the messages—and yes, I’m also the one taking out the trash at the end of the day.
+              {t("paragraph1")}
             </p>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              Concept:Coffee was built to make specialty coffee feel accessible, welcoming, and worth caring about. With years of hands-on experience and an SCA roasting certification, my goal is simple: empower everyday coffee drinkers with the knowledge they need to enjoy better coffee—together.
+              {t("paragraph2")}
             </p>
             <Button
               asChild
               className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
             >
-              <Link href="/about">Learn More About Us</Link>
+              <Link href="/about">{t("cta")}</Link>
             </Button>
           </div>
         </div>

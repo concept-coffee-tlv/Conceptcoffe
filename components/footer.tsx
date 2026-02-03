@@ -1,20 +1,15 @@
-import Link from "next/link"
+"use client"
+
 import Image from "next/image"
 import { Instagram, MapPin, Phone, Mail } from "lucide-react"
-
-const navigation = {
-  experience: [
-    { name: "Workshops", href: "/workshops" },
-    { name: "Corporate Events", href: "/corporate" },
-    { name: "Community", href: "/community" },
-  ],
-  company: [
-    { name: "About Us", href: "/about" },
-    { name: "Policies", href: "/policy" },
-  ],
-}
+import { useTranslations } from "next-intl"
+import { Link } from "@/src/i18n/navigation"
 
 export function Footer() {
+  const t = useTranslations("footer")
+  const tNav = useTranslations("navigation")
+  const tContact = useTranslations("contact")
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-[1400px] px-6 py-16 lg:px-8">
@@ -31,8 +26,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-4 max-w-md text-primary-foreground/80 leading-relaxed">
-              Specialty coffee education in the heart of Tel Aviv. Hands-on workshops, corporate experiences, and
-              private sessions
+              {t("description")}
             </p>
             <div className="mt-6">
               <a
@@ -49,45 +43,65 @@ export function Footer() {
 
           {/* Experience */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Experience</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider">{t("experienceTitle")}</h3>
             <ul className="mt-4 space-y-3">
-              {navigation.experience.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/workshops"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  {t("workshopsLink")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/corporate"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  {t("corporateEventsLink")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/community"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  {t("communityLink")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Company</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider">{t("companyTitle")}</h3>
             <ul className="mt-4 space-y-3">
-              {navigation.company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/about"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  {t("aboutUs")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/policy"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  {t("policies")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider">Contact</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider">{t("contactTitle")}</h3>
             <div className="mt-4 space-y-3 text-sm text-primary-foreground/80">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>Yonatan Ratosh 2, Tel Aviv–Yafo</span>
+                <span>{tContact("address")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0" />
@@ -107,7 +121,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <p className="text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} concept:coffee. All rights reserved.
+            {t("copyright", { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

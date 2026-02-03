@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -6,7 +7,14 @@ export const metadata = {
   description: "Privacy policy, booking and cancellation policy, and delivery policy for concept:coffee.",
 }
 
-export default function PolicyPage() {
+type Props = {
+  params: Promise<{ locale: string }>
+}
+
+export default async function PolicyPage({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <>
       <Header />

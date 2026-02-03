@@ -1,8 +1,11 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import Link from "next/link"
+import { useTranslations } from "next-intl"
+import { Link } from "@/src/i18n/navigation"
 
 const brands = [
   { name: "Nespresso", logo: "/brands/nespresso.avif" },
@@ -11,13 +14,9 @@ const brands = [
   { name: "Citrus and Salt", logo: "/brands/citrusandsalt.avif" },
 ]
 
-export const metadata = {
-  title: "Corporate Events | concept:coffee",
-  description:
-    "Unique team-building coffee experiences for companies in Tel Aviv. Engage your team with hands-on workshops that foster connection and creativity.",
-}
-
 export default function CorporatePage() {
+  const t = useTranslations("corporatePage")
+
   return (
     <>
       <Header />
@@ -28,18 +27,14 @@ export default function CorporatePage() {
               {/* Left side - Text content */}
               <div>
                 <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">
-                  Corporate Events
+                  {t("eyebrow")}
                 </p>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Elevate your next team experience through coffee.
+                  {t("title")}
                 </h1>
                 <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
-                  <p>
-                    Our corporate workshops are guided tasting experiences designed to encourage collaboration, curiosity, and shared learning. Teams explore the journey of coffee from cultivation to cup while tasting a curated selection of coffees roasted specifically for the session.
-                  </p>
-                  <p>
-                    Ideal for team building, off-sites, and hosted happy hours, Coffee: A Concept creates meaningful connection through a structured, engaging learning experience  leaving teams more connected, inspired, and energized!
-                  </p>
+                  <p>{t("paragraph1")}</p>
+                  <p>{t("paragraph2")}</p>
                 </div>
                 <div className="mt-10">
                   <Button
@@ -47,9 +42,9 @@ export default function CorporatePage() {
                     size="lg"
                     className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
                   >
-                    <Link href="https://wa.me/972584001289" target="_blank" rel="noopener noreferrer">
-                      Contact Now
-                    </Link>
+                    <a href="https://wa.me/972584001289" target="_blank" rel="noopener noreferrer">
+                      {t("cta")}
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -87,7 +82,7 @@ export default function CorporatePage() {
         <section className="py-12 lg:py-16 bg-accent text-accent-foreground">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <p className="text-center text-sm font-medium uppercase tracking-widest text-accent-foreground mb-10">
-              Trusted by
+              {t("trustedBy")}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {brands.map((brand) => (

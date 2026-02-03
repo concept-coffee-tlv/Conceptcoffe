@@ -1,9 +1,14 @@
-import Link from "next/link"
+"use client"
+
 import Image from "next/image"
+import { useTranslations } from "next-intl"
+import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Star } from "lucide-react"
+import { Star } from "lucide-react"
 
 export function Hero() {
+  const t = useTranslations("hero")
+
   return (
     <section className="relative min-h-screen flex items-center pt-20">
       {/* Background video */}
@@ -25,10 +30,10 @@ export function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
             <div className="flex items-center gap-1.5 bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
               <Star className="h-4 w-4 fill-accent text-accent" />
-              <span className="text-sm font-medium text-background">5.0/5 on Google</span>
+              <span className="text-sm font-medium text-background">{t("badge1")}</span>
             </div>
             <div className="bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <span className="text-sm font-medium text-background">500+ workshops hosted</span>
+              <span className="text-sm font-medium text-background">{t("badge2")}</span>
             </div>
           </div>
 
@@ -41,10 +46,10 @@ export function Hero() {
             priority
           />
           <p className="mt-6 text-lg md:text-xl text-background/90 leading-relaxed max-w-xl mx-auto">
-          Coffee education & experiences for everyday coffee drinkers.
+            {t("tagline")}
           </p>
           <p className="mt-4 text-base text-background/70 leading-relaxed max-w-lg mx-auto">
-            Workshops, tastings, and team experiences that help you understand, taste, and brew better coffee.
+            {t("description")}
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
@@ -54,8 +59,7 @@ export function Hero() {
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base"
             >
               <Link href="/workshops">
-                View Workshops
-                <ArrowRight className="ml-2 h-4 w-4" />
+                {t("cta1")}
               </Link>
             </Button>
             <Button
@@ -64,7 +68,7 @@ export function Hero() {
               variant="outline"
               className="border-background text-background hover:bg-background/10 font-medium bg-transparent"
             >
-              <Link href="/corporate">Plan a Private or Corporate Workshop</Link>
+              <Link href="/corporate">{t("cta2")}</Link>
             </Button>
           </div>
         </div>

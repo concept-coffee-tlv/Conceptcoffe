@@ -1,0 +1,293 @@
+{
+  "navigation": {
+    "workshops": "Workshops",
+    "corporate": "Corporate",
+    "community": "Community",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "bookNow": "Book Now",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "badge1": "5.0/5 on Google",
+    "badge2": "500+ workshops hosted",
+    "tagline": "Coffee education & experiences for everyday coffee drinkers.",
+    "description": "Workshops, tastings, and team experiences that help you understand, taste, and brew better coffee.",
+    "cta1": "View Workshops",
+    "cta2": "Plan a Private or Corporate Workshop"
+  },
+  "chooseExperience": {
+    "sectionTitle": "Choose Your Experience",
+    "sectionSubtitle": "Two Ways to Learn Coffee",
+    "sectionDescription": "Not sure which is right for you? Here's a quick guide to help you find the perfect fit."
+  },
+  "privateSessions": {
+    "eyebrow": "Special Occasions & Personal Learning",
+    "subtitle": "Your own coffee journey",
+    "title": "Private Sessions",
+    "description": "One-on-one or small group coffee experiences. Chose from an available workshop of have one tailored for you, your questions, and your pace. Perfect for curious beginners, enthusiastic home brewers, and even coffee professionals.",
+    "feature1": "Fully customizable",
+    "feature2": "1-6 people",
+    "feature3": "Flexible scheduling",
+    "cta": "Plan Your Experience"
+  },
+  "corporateEvents": {
+    "eyebrow": "Companies & Organizations",
+    "subtitle": "Team building with a twist",
+    "title": "Corporate Events",
+    "description": "Hands-on, team-friendly coffee experiences that spark conversation and connection.",
+    "feature1": "Tailored to your team",
+    "feature2": "10-50+ participants",
+    "feature3": "On-site or at our studio",
+    "cta": "Request a Quote"
+  },
+  "meetEvan": {
+    "badge": "5+ Years of Experience",
+    "eyebrow": "Meet The Roaster",
+    "title": "Hi, I'm Evan 👋",
+    "paragraph1": "Concept:Coffee might look like a brand, but behind the scenes it's very much a one-man show. I source and roast all the coffees for our workshops, design and lead the experiences, answer the messages—and yes, I'm also the one taking out the trash at the end of the day.",
+    "paragraph2": "Concept:Coffee was built to make specialty coffee feel accessible, welcoming, and worth caring about. With years of hands-on experience and an SCA roasting certification, my goal is simple: empower everyday coffee drinkers with the knowledge they need to enjoy better coffee—together.",
+    "cta": "Learn More About Us"
+  },
+  "reviews": {
+    "googleReviews": "Google Reviews",
+    "rating": "5.0",
+    "review1": {
+      "text": "Had the pleasure of participating in a coffee workshop at Concept Coffee today. I was a bit skeptical at first, I don't think of myself as a huge coffee person, but I was blown away. Evan is so knowledgeable and he made the topic interesting and approachable. I never really thought much about where my coffee was coming from, how it started out or why it tasted bitter, acidic or a specific flavor. I am going to be paying more attention next time I go to a coffee shop! Thank you Evan!",
+      "author": "Lynn Burris"
+    },
+    "review2": {
+      "text": "If anyone is interested at all in coffee and culture, Concept Coffee is a must. The studio is beautiful and the owner is one of the most knowledgeable people about coffee I have ever met. He explained everything so well and it's clear how passionate he is about the subject. The workshop was a very basic introduction to coffee and how we interact with it but I still walked away with a much better understanding about coffee and taste than I previously had. Would absolutely come again next time I'm here.",
+      "author": "Asher Ackman"
+    },
+    "review3": {
+      "text": "Evan's passion and expertise for coffee are truly inspiring! I attended a private coffee cupping and latte art workshop and was amazed by how much I learned in such a short time. We explored a variety of unique coffees, each one with its own distinct flavor and story, and Evan guided us through the experience with patience, knowledge, and enthusiasm. The atmosphere was warm and welcoming, making the whole session both educational and fun. I can't recommend enough!",
+      "author": "Amit Avner"
+    },
+    "seeAllReviews": "See all reviews on Google"
+  },
+  "cta": {
+    "title": "Ready to Start Your Coffee Journey?",
+    "description": "Whether you're a curious beginner or a seasoned enthusiast, there's always more to discover in the world of specialty coffee.",
+    "button1": "View All Workshops",
+    "button2": "Get in Touch"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "categories": {
+      "aboutConceptCoffee": "About Concept:Coffee",
+      "workshops": "Workshops",
+      "bookingCancellation": "Booking & Cancellation",
+      "privateCorporate": "Private & Corporate",
+      "coffeeLearning": "Coffee & Learning",
+      "practicalInfo": "Practical Info"
+    },
+    "questions": {
+      "whatIsConceptCoffee": {
+        "question": "What is Concept:Coffee?",
+        "answer": "Concept:Coffee is a specialty coffee education studio and community based in Tel Aviv. We offer hands-on coffee workshops, tastings (cupping), private sessions, and corporate experiences. We give people the tools they need to see coffee as more than just a drink."
+      },
+      "whoAreWorkshopsFor": {
+        "question": "Who are Concept:Coffee workshops for?",
+        "answer": "Our workshops are designed for curious coffee drinkers, no professional background required. Some sessions are beginner-friendly, while others are more advanced and focus on specific skills like cupping, espresso, or milk texturing."
+      },
+      "needPriorExperience": {
+        "question": "Do I need prior coffee experience to attend?",
+        "answer": "No! All of our workshops are accessible to beginners. If a workshop requires prior knowledge, it will be clearly stated in the description."
+      },
+      "typesOfWorkshops": {
+        "question": "What types of coffee workshops do you offer?",
+        "answer": "We currently offer: Coffee tasting & cupping workshops, Barista & espresso workshops, Latte art workshops, Coffee fundamentals (farm-to-cup), and Private and corporate coffee experiences. If you're interested in a custom coffee workshop covering something not listed here, please be in touch!"
+      },
+      "workshopLength": {
+        "question": "How long are the workshops?",
+        "answer": "Most workshops last between 1.5–2 hours, depending on the topic and group size."
+      },
+      "peoplePerWorkshop": {
+        "question": "How many people are in each workshop?",
+        "answer": "All workshops are private and can accommodate between 1-12 participants."
+      },
+      "areWorkshopsHandsOn": {
+        "question": "Are workshops hands-on?",
+        "answer": "Yes. Our workshops are practical, interactive, and experience-driven. You'll taste, brew, compare, ask questions, and actually do things, not just listen."
+      },
+      "howToBook": {
+        "question": "How do I book a workshop?",
+        "answer": "All workshops can be booked directly through our website. Payment is made upfront to secure your spot."
+      },
+      "cancelOrReschedule": {
+        "question": "Can I cancel or reschedule a workshop?",
+        "answer": "Yes. Full refund up to 48 hours before the workshop. Reschedule up to 24 hours before. No refunds within 24 hours of the workshop. Full cancellation terms are listed on the booking page."
+      },
+      "transferTicket": {
+        "question": "Can I transfer my ticket to someone else?",
+        "answer": "Yes, you're welcome to transfer your spot to another person. Just let us know in advance."
+      },
+      "offerPrivateWorkshops": {
+        "question": "Do you offer private coffee workshops?",
+        "answer": "Yes. We offer private workshops for individuals, couples, teams, and special events. These can be tailored to your level, interests, and time frame."
+      },
+      "offerCorporateWorkshops": {
+        "question": "Do you offer corporate or office workshops?",
+        "answer": "Absolutely. We run corporate coffee workshops and experiences for teams, offices, and off-sites, from casual tastings to structured educational sessions."
+      },
+      "hostAtVenue": {
+        "question": "Can workshops be hosted at our office or venue?",
+        "answer": "Yes. We can host workshops at your office, event space, or at our studio, depending on the format and group size."
+      },
+      "whatCoffeeUsed": {
+        "question": "What kind of coffee do you use in workshops?",
+        "answer": "We use specialty-grade coffees, sourced by founder and roaster Evan Goel with highest transparency and ethical trading practices. Coffees are chosen to clearly demonstrate flavor, processing, and origin differences."
+      },
+      "teachHomeBrewing": {
+        "question": "Do you teach home coffee brewing?",
+        "answer": "Yes. Many of our workshops focus on improving home coffee — whether that's espresso machines, manual brewing, or understanding grind size, water, and extraction."
+      },
+      "languageOfWorkshops": {
+        "question": "Are workshops in Hebrew or English?",
+        "answer": "Workshops are offered in Hebrew or English, depending on the group. Language is always specified in advance."
+      },
+      "isStudioAccessible": {
+        "question": "Is the studio accessible?",
+        "answer": "If you have specific accessibility needs, please reach out in advance and we'll do our best to accommodate."
+      },
+      "howToContact": {
+        "question": "How can I contact Concept:Coffee?",
+        "answer": "You can reach us through the contact form on the website or via WhatsApp. We're happy to help you choose the right workshop."
+      }
+    }
+  },
+  "contact": {
+    "sectionTitle": "Find Us",
+    "title": "Visit Our Studio",
+    "location": "Location",
+    "address": "Yonatan Ratosh 2, Tel Aviv–Yafo",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram"
+  },
+  "footer": {
+    "description": "Specialty coffee education in the heart of Tel Aviv. Hands-on workshops, corporate experiences, and private sessions",
+    "experienceTitle": "Experience",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "workshopsLink": "Workshops",
+    "corporateEventsLink": "Corporate Events",
+    "communityLink": "Community",
+    "aboutUs": "About Us",
+    "policies": "Policies",
+    "copyright": "© {year} concept:coffee. All rights reserved."
+  },
+  "languageSwitcher": {
+    "en": "English",
+    "he": "עברית"
+  },
+  "blogPage": {
+    "eyebrow": "Blog",
+    "title": "Stories & Insights",
+    "subtitle": "Stories, insights, and updates from our coffee journey",
+    "noPosts": "No blog posts yet. Check back soon!",
+    "backToBlog": "Back to Blog",
+    "metaTitle": "Blog | concept:coffee",
+    "metaDescription": "Stories, insights, and updates from our coffee journey."
+  },
+  "workshopsPage": {
+    "eyebrow": "Private Sessions",
+    "title": "Your Personal Coffee Journey",
+    "subtitle": "Choose the experience that speaks to you, or build something unique! Each workshop is fully tailored to your group's level, interests, and pace.",
+    "sectionTitle": "Available Workshops",
+    "sectionSubtitle": "Choose a workshop and book your private session",
+    "bookThisWorkshop": "Book This Workshop",
+    "bookingTitle": "Book Your Workshop",
+    "bookingSubtitle": "Select a date and time that works for you",
+    "contactPrompt": "Don't see what you're looking for?",
+    "contactUs": "Contact Us",
+    "workshops": {
+      "tasting": {
+        "title": "Tasting",
+        "description": "A hands-on barista workshop focused on espresso and milk fundamentals. Learn how to dial in shots, steam milk properly, and make better coffee at home using professional equipment.",
+        "feature1": "Flavor profiling basics",
+        "feature2": "Origin and processing impact",
+        "feature3": "Guided tasting of 3–5 brews",
+        "duration": "90 minutes",
+        "capacity": "1-12 people"
+      },
+      "barista": {
+        "title": "Barista",
+        "description": "A hands-on intro to espresso, milk, and barista fundamentals. No jargon—just practical skills practiced on real equipment.",
+        "feature1": "Espresso technique and extraction",
+        "feature2": "Dialing in your shots",
+        "feature3": "Milk steaming and latte art",
+        "duration": "2 hours",
+        "capacity": "1-12 people"
+      },
+      "roasting": {
+        "title": "Roasting",
+        "description": "An introduction to coffee roasting, from green beans to finished roast. Learn how time and temperature affect flavor, build a profile, roast, and take home your freshly roasted coffee!",
+        "feature1": "Learn the pros art of coffee roasting!",
+        "feature2": "Understand how coffee changes as it roasts",
+        "feature3": "Roast your own coffee to take home",
+        "duration": "2 hours",
+        "capacity": "1-6 people"
+      },
+      "cupping": {
+        "title": "Cupping",
+        "description": "Learn the professional coffee tasting method used worldwide. Taste 4–5 coffees side by side, understand acidity, body, and balance, and develop a clear, confident tasting vocabulary.",
+        "feature1": "Aroma, acidity, body, and balance",
+        "feature2": "Cup 4–5 coffees side-by-side",
+        "feature3": "Develop your tasting vocabulary",
+        "duration": "1.5 hours",
+        "capacity": "1-12 people"
+      },
+      "custom": {
+        "title": "Custom",
+        "description": "Customizable workshop built around you. Choose from one, or many topics espresso, brewing, cupping, or tasting — with flexible scheduling and format for individuals or groups.",
+        "feature1": "Espresso, latte art, or filter",
+        "feature2": "Cupping and sensory training",
+        "feature3": "Flexible timing and format",
+        "duration": "Flexible",
+        "capacity": "1-12 people"
+      }
+    }
+  },
+  "corporatePage": {
+    "eyebrow": "Corporate Events",
+    "title": "Elevate your next team experience through coffee.",
+    "paragraph1": "Our corporate workshops are guided tasting experiences designed to encourage collaboration, curiosity, and shared learning. Teams explore the journey of coffee from cultivation to cup while tasting a curated selection of coffees roasted specifically for the session.",
+    "paragraph2": "Ideal for team building, off-sites, and hosted happy hours, Coffee: A Concept creates meaningful connection through a structured, engaging learning experience leaving teams more connected, inspired, and energized!",
+    "cta": "Contact Now",
+    "trustedBy": "Trusted by"
+  },
+  "communityPage": {
+    "eyebrow": "Community",
+    "title": "Join The Concept:Community",
+    "paragraph1": "Whether you're a coffee pro, a curious beginner, or just looking for a fun way to meet new people, Concept:Community events bring coffee lovers of all levels together. It's a space to learn, connect, and celebrate coffee in a relaxed, welcoming environment.",
+    "paragraph2": "The Concept:Community WhatsApp is the best way to stay updated on upcoming community events and collaborations, many of which are free or symbolically priced. It's also a place to share brewing tips, ask questions, and get coffee shop recommendations from people who care just as much as you do.",
+    "paragraph3": "Join our WhatsApp community to stay updated and connect with fellow coffee lovers!",
+    "cta": "Join the WhatsApp Community"
+  },
+  "aboutPage": {
+    "eyebrow": "The Full Story",
+    "title": "About The Concept:",
+    "intro": "At Concept:Coffee, we believe that coffee is more than just a drink—it's an experience. Our mission is to empower everyday coffee drinkers with the tools they need to explore, learn, and perfect the craft of specialty coffee. And now more than ever Coffee Is Better When Shared",
+    "meetTheRoaster": "Meet The Roaster",
+    "evanIntro": "Hi, I'm Evan.",
+    "evanBio": "concept:coffee is my passion project turned small business with big dreams. With over half a decade of experience in coffee and a Specialty Coffee Association roasting certification, I noticed a growing gap between coffee geeks and everyday coffee drinkers, and a lack of an organizer in the specialty coffee community.",
+    "evanMission": "At concept:coffee, we believe in empowering everyday coffee drinkers through accessible specialty coffee education. A more informed coffee drinker is a better coffee drinker, and coffee is always best when shared.",
+    "evanRole": "Founder & Roaster",
+    "valuesTitle": "What We Stand For",
+    "valuesSubtitle": "Our values guide everything we do, from how we source our coffee to how we run our workshops.",
+    "missionTitle": "Our Mission",
+    "missionText": "We believe in the power of education and collaboration, and we're here to make specialty coffee more accessible for everyone. Our goal is to build a community that values quality, sustainability, and education, helping people understand that every cup has a story—from farm to cup. At Concept:Coffee, it's about more than just the coffee—it's about building a culture of appreciation, creativity, and knowledge.",
+    "studioTitle": "The Studio",
+    "studioText": "Located at Yonatan Ratosh 2, designed and constructed by founder Evan Goel. The Concept:Coffee Studio is dedicated space where coffee education, creativity, and community collide. Located by the beautiful Jaffa port, our studio is a place where anyone—whether you're a curious beginner or a seasoned enthusiast—can immerse themselves in the world of specialty coffee. This is more than just a studio. It's a creative hub, a learning space, and a community gathering point where people come together to share their love for coffee, creativity, and knowledge.",
+    "asSeenOn": "As Seen On",
+    "featuredIn": "Featured In",
+    "ctaTitle": "Come Learn With Us",
+    "ctaSubtitle": "Whether you're looking to learn a new skill, celebrate a special occasion, or bring your team together—we'd love to meet you.",
+    "ctaButton1": "Explore Workshops",
+    "ctaButton2": "Get in Touch"
+  }
+}

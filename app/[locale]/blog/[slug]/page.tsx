@@ -1,3 +1,5 @@
+import { setRequestLocale } from "next-intl/server"
+import { getTranslations } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { getBlogPostBySlug, getAllBlogPosts } from "@/lib/contentful"
@@ -6,7 +8,7 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import Image from "next/image"
 import { format } from "date-fns"
 import { notFound } from "next/navigation"
-import Link from "next/link"
+import { Link } from "@/src/i18n/navigation"
 import { ArrowLeft } from "lucide-react"
 
 export const revalidate = 60 // Revalidate every 60 seconds
@@ -90,12 +92,15 @@ const renderOptions = {
   },
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
-  const { slug } = await params
+type Props = {
+  params: Promise<{ locale: string; slug: string }>
+}
+
+export default async function BlogPostPage({ params }: Props) {
+  const { locale, slug } = await params
+  setRequestLocale(locale)
+
+  const t = await getTranslations({ locale, namespace: "blogPage" })
   const post = await getBlogPostBySlug(slug)
 
   if (!post) {
@@ -113,16 +118,18 @@ export default async function BlogPostPage({
                 href="/blog"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
               >
-                <ArrowLeft className="h-4 w-4" />
-                Back to Blog
+                <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+                {t("backToBlog")}
               </Link>
 
-              <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">
-                {format(new Date(post.publishedDate), "MMMM d, yyyy")}
-              </p>
-              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                {post.title}
-              </h1>
+              <div dir="ltr">
+                <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">
+                  {format(new Date(post.publishedDate), "MMMM d, yyyy")}
+                </p>
+                <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                  {post.title}
+                </h1>
+              </div>
             </div>
           </div>
         </section>
@@ -140,7 +147,7 @@ export default async function BlogPostPage({
                 />
               </div>
 
-              <article>
+              <article dir="ltr">
                 {documentToReactComponents(post.content, renderOptions)}
               </article>
             </div>
