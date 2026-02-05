@@ -28,9 +28,9 @@ export function Header() {
           <Image
             src="/conceptcoffeelogo.png"
             alt="concept:coffee"
-            width={180}
-            height={48}
-            className="h-10 w-auto invert"
+            width={220}
+            height={60}
+            className="h-14 w-auto invert"
             priority
           />
         </Link>

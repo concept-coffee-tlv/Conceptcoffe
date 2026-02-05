@@ -3,11 +3,11 @@
 import { useState } from "react"
 import Image from "next/image"
 import Script from "next/script"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Clock, Users } from "lucide-react"
 
-const workshopIds = ["tasting", "barista", "roasting", "cupping", "custom"] as const
+const workshopIds = ["tasting", "barista", "roasting", "cupping", "latteart", "custom"] as const
 type WorkshopId = typeof workshopIds[number]
 
 const workshopImages: Record<WorkshopId, string> = {
@@ -15,6 +15,7 @@ const workshopImages: Record<WorkshopId, string> = {
   barista: "/images/barista.avif",
   roasting: "/images/roasting.avif",
   cupping: "/images/cupping.avif",
+  latteart: "/latteart.avif",
   custom: "/images/custom.avif",
 }
 
@@ -40,8 +41,11 @@ export function WorkshopHero() {
 
 export function WorkshopBooking({ show }: { show: boolean }) {
   const t = useTranslations("workshopsPage")
+  const locale = useLocale()
 
   if (!show) return null
+
+  const monkeybookUrl = `https://app.monkeybook.io/order/695c2746b187ec242a817de4/695c2746b187ec242a817de3/695c274cbc49194459c67fe5?language=${locale}`
 
   return (
     <section id="book" className="py-24 lg:py-32 bg-secondary">
@@ -57,7 +61,7 @@ export function WorkshopBooking({ show }: { show: boolean }) {
 
         <div
           className="monkeybook-widget-container"
-          data-iframe-src="https://app.monkeybook.io/order/695c2746b187ec242a817de4/695c2746b187ec242a817de3/695c274cbc49194459c67fe5?"
+          data-iframe-src={monkeybookUrl}
         />
 
         <Script

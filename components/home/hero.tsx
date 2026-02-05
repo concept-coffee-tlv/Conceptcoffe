@@ -26,26 +26,16 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 w-full px-6 lg:px-12 py-24">
-        <div className="max-w-xl mx-auto text-center">
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-            <div className="flex items-center gap-1.5 bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <Star className="h-4 w-4 fill-accent text-accent" />
-              <span className="text-sm font-medium text-background">{t("badge1")}</span>
-            </div>
-            <div className="bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
-              <span className="text-sm font-medium text-background">{t("badge2")}</span>
-            </div>
-          </div>
-
+        <div className="max-w-4xl mx-auto text-center">
           <Image
             src="/conceptcoffeelogo.png"
             alt="Concept:Coffee"
-            width={600}
-            height={150}
-            className="h-24 md:h-32 lg:h-40 w-auto mx-auto"
+            width={1000}
+            height={250}
+            className="h-40 md:h-56 lg:h-72 w-auto mx-auto"
             priority
           />
-          <p className="mt-6 text-lg md:text-xl text-background/90 leading-relaxed max-w-xl mx-auto">
+          <p className="mt-3 text-xl md:text-2xl lg:text-3xl text-background/90 whitespace-nowrap mx-auto">
             {t("tagline")}
           </p>
           <p className="mt-4 text-base text-background/70 leading-relaxed max-w-lg mx-auto">
@@ -70,6 +60,16 @@ export function Hero() {
             >
               <Link href="/corporate">{t("cta2")}</Link>
             </Button>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <div className="flex items-center gap-1.5 bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              <Star className="h-4 w-4 fill-accent text-accent" />
+              <span className="text-sm font-medium text-background">{t("badge1")}</span>
+            </div>
+            <div className="bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
+              <span className="text-sm font-medium text-background">{t("badge2")}</span>
+            </div>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@
     "title": "Private Sessions",
     "description": "One-on-one or small group coffee experiences. Chose from an available workshop of have one tailored for you, your questions, and your pace. Perfect for curious beginners, enthusiastic home brewers, and even coffee professionals.",
     "feature1": "Fully customizable",
-    "feature2": "1-6 people",
+    "feature2": "1-12 people",
     "feature3": "Flexible scheduling",
     "cta": "Plan Your Experience"
   },
@@ -43,7 +43,7 @@
     "cta": "Request a Quote"
   },
   "meetEvan": {
-    "badge": "5+ Years of Experience",
+    "badge": "Years of Experience",
     "eyebrow": "Meet The Roaster",
     "title": "Hi, I'm Evan 👋",
     "paragraph1": "Concept:Coffee might look like a brand, but behind the scenes it's very much a one-man show. I source and roast all the coffees for our workshops, design and lead the experiences, answer the messages—and yes, I'm also the one taking out the trash at the end of the day.",
@@ -239,6 +239,15 @@
         "feature2": "Cup 4–5 coffees side-by-side",
         "feature3": "Develop your tasting vocabulary",
         "duration": "1.5 hours",
+        "capacity": "1-12 people"
+      },
+      "latteart": {
+        "title": "Latte Art",
+        "description": "Master the art of milk steaming and pouring beautiful latte art. Learn proper milk texturing techniques and create hearts, tulips, and rosettas on your espresso drinks.",
+        "feature1": "Milk steaming fundamentals",
+        "feature2": "Pouring techniques and patterns",
+        "feature3": "Create hearts, tulips, and rosettas",
+        "duration": "2 hours",
         "capacity": "1-12 people"
       },
       "custom": {
