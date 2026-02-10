@@ -56,7 +56,7 @@ export default function TastingPage() {
         </section>
 
         {/* Main Content */}
-        <section className="py-14 lg:py-20 bg-background">
+        <section className="py-24 lg:py-32 bg-background">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
 
