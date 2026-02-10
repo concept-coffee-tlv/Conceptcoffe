@@ -100,7 +100,7 @@ export default function TastingPage() {
 
               {/* Right: Booking Card */}
               <div className="lg:col-span-1">
-                <div className="sticky top-28 bg-card border border-border rounded-xl p-6 lg:p-8 shadow-lg">
+                <div className="bg-card border border-border rounded-xl p-6 lg:p-8 shadow-lg">
                   <h3 className="font-serif text-xl font-bold text-foreground mb-6">
                     {t("workshopDetails")}
                   </h3>
