@@ -207,7 +207,7 @@
     "workshops": {
       "tasting": {
         "title": "Tasting",
-        "description": "A hands-on barista workshop focused on espresso and milk fundamentals. Learn how to dial in shots, steam milk properly, and make better coffee at home using professional equipment.",
+        "description": "A guided coffee tasting experience designed to sharpen your palate and change how you drink coffee.",
         "feature1": "Flavor profiling basics",
         "feature2": "Origin and processing impact",
         "feature3": "Guided tasting of 3–5 brews",
@@ -276,6 +276,25 @@
     "paragraph2": "The Concept:Community WhatsApp is the best way to stay updated on upcoming community events and collaborations, many of which are free or symbolically priced. It's also a place to share brewing tips, ask questions, and get coffee shop recommendations from people who care just as much as you do.",
     "paragraph3": "Join our WhatsApp community to stay updated and connect with fellow coffee lovers!",
     "cta": "Join the WhatsApp Community"
+  },
+  "tastingPage": {
+    "title": "Concept:Tasting",
+    "tagline": "Taste the Concept\nA coffee workshop for the curious. No prior knowledge needed",
+    "intro": "\"Taste the Concept\" is our most accessible workshop—designed for everyday coffee lovers who are ready to go beyond the buzz. In just 90 minutes, we'll take you on a guided journey that will change the way you think about your daily cup.",
+    "learnTitle": "You'll learn:",
+    "learn1": "What actually makes coffee taste good (and why it matters)",
+    "learn2": "How processing, origin, and roasting impact flavor",
+    "learn3": "How to taste coffee like a pro—with a guided tasting of 3–5 unique brews",
+    "forWho": "Whether you drink instant or espresso, this session is for anyone who's ever wondered why their coffee tastes the way it does—and how to make it better.",
+    "cta": "Come with questions, leave with a whole new relationship to coffee.",
+    "closing": "This isn't just a tasting—it's a concept.",
+    "bookNow": "Book Now",
+    "workshopDetails": "Workshop Details",
+    "duration": "Duration",
+    "capacity": "Group Size",
+    "privateSession": "All sessions are private and personalized",
+    "bookingTitle": "Book Your Tasting Workshop",
+    "bookingSubtitle": "Select a date and time that works for you"
   },
   "aboutPage": {
     "eyebrow": "The Full Story",

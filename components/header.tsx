@@ -30,7 +30,7 @@ export function Header() {
             alt="concept:coffee"
             width={220}
             height={60}
-            className="h-14 w-auto invert"
+            className="h-14 w-auto invert scale-150 origin-left"
             priority
           />
         </Link>

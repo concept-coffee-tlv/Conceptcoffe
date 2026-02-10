@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Script from "next/script"
 import { useTranslations, useLocale } from "next-intl"
+import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Clock, Users } from "lucide-react"
 
@@ -123,12 +124,21 @@ export function WorkshopTypes({ onBookClick }: { onBookClick: () => void }) {
                     <span>{t(`workshops.${workshopId}.capacity`)}</span>
                   </div>
                 </div>
-                <Button
-                  onClick={onBookClick}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                >
-                  {t("bookThisWorkshop")}
-                </Button>
+                {workshopId === "tasting" ? (
+                  <Button
+                    asChild
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  >
+                    <Link href="/workshops/tasting">{t("bookThisWorkshop")}</Link>
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={onBookClick}
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  >
+                    {t("bookThisWorkshop")}
+                  </Button>
+                )}
               </div>
             </div>
           ))}

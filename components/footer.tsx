@@ -20,9 +20,9 @@ export function Footer() {
               <Image
                 src="/conceptcoffeelogo.png"
                 alt="concept:coffee"
-                width={200}
-                height={53}
-                className="h-12 w-auto"
+                width={220}
+                height={60}
+                className="h-14 w-auto scale-150 origin-left"
               />
             </Link>
             <p className="mt-4 max-w-md text-primary-foreground/80 leading-relaxed">
