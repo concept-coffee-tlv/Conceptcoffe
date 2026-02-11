@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
-import { Button } from "@/components/ui/button"
 import { CheckCircle2 } from "lucide-react"
 
 export function Offerings() {
@@ -51,9 +50,10 @@ export function Offerings() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {offerings.map((offering) => (
-            <div
+            <Link
               key={offering.title}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all hover:border-accent/50 flex flex-col"
+              href={offering.href}
+              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all hover:border-accent/50 flex flex-col cursor-pointer"
             >
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img
@@ -81,13 +81,11 @@ export function Offerings() {
                   ))}
                 </ul>
 
-                <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                  <Link href={offering.href}>
-                    {offering.cta}
-                  </Link>
-                </Button>
+                <div className="w-full bg-primary text-primary-foreground text-center py-2 rounded-md font-medium">
+                  {offering.cta}
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

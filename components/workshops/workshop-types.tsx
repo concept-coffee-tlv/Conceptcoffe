@@ -86,62 +86,77 @@ export function WorkshopTypes({ onBookClick }: { onBookClick: () => void }) {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8">
-          {workshopIds.map((workshopId) => (
-            <div
-              key={workshopId}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/50 transition-all w-full lg:w-[calc(33.333%-1.34rem)]"
-            >
-              <div className="aspect-[16/9] overflow-hidden relative">
-                <Image
-                  src={workshopImages[workshopId]}
-                  alt={t(`workshops.${workshopId}.title`)}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 lg:p-8">
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-4">
-                  {t(`workshops.${workshopId}.title`)}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed min-h-[130px]">
-                  {t(`workshops.${workshopId}.description`)}
-                </p>
-                <ul className="space-y-1.5 mt-4 mb-6">
-                  {[1, 2, 3].map((i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
-                      {t(`workshops.${workshopId}.feature${i}`)}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-accent" />
-                    <span>{t(`workshops.${workshopId}.duration`)}</span>
+          {workshopIds.map((workshopId) => {
+            const cardContent = (
+              <>
+                <div className="aspect-[16/9] overflow-hidden relative">
+                  <Image
+                    src={workshopImages[workshopId]}
+                    alt={t(`workshops.${workshopId}.title`)}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 lg:p-8">
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-4">
+                    {t(`workshops.${workshopId}.title`)}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed min-h-[130px]">
+                    {t(`workshops.${workshopId}.description`)}
+                  </p>
+                  <ul className="space-y-1.5 mt-4 mb-6">
+                    {[1, 2, 3].map((i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
+                        {t(`workshops.${workshopId}.feature${i}`)}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-6">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-accent" />
+                      <span>{t(`workshops.${workshopId}.duration`)}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="h-4 w-4 text-accent" />
+                      <span>{t(`workshops.${workshopId}.capacity`)}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-accent" />
-                    <span>{t(`workshops.${workshopId}.capacity`)}</span>
+                  <div className="w-full bg-primary text-primary-foreground text-center py-2 rounded-md font-medium">
+                    {t("bookThisWorkshop")}
                   </div>
                 </div>
-                {workshopId === "tasting" ? (
-                  <Button
-                    asChild
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                  >
-                    <Link href="/workshops/tasting">{t("bookThisWorkshop")}</Link>
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={onBookClick}
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                  >
-                    {t("bookThisWorkshop")}
-                  </Button>
-                )}
+              </>
+            )
+
+            const cardClasses = "group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/50 transition-all w-full lg:w-[calc(33.333%-1.34rem)] cursor-pointer"
+
+            return workshopId === "tasting" ? (
+              <Link
+                key={workshopId}
+                href="/workshops/tasting"
+                className={cardClasses}
+              >
+                {cardContent}
+              </Link>
+            ) : (
+              <div
+                key={workshopId}
+                className={cardClasses}
+                onClick={onBookClick}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault()
+                    onBookClick()
+                  }
+                }}
+              >
+                {cardContent}
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="mt-12 text-center">

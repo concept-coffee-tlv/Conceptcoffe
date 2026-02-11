@@ -6,12 +6,21 @@ import { useTranslations, useLocale } from "next-intl"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel"
 import { Clock, Users, Coffee } from "lucide-react"
 
 const galleryImages = [
-  "/images/tasting.avif",
-  "/coffe tasting.avif",
-  "/images/cupping.avif",
+  "/tasting1.JPG",
+  "/tasting2.JPG",
+  "/tasting3.JPG",
+  "/tasting4.JPG",
+  "/tasting5.JPG",
 ]
 
 export default function TastingPage() {
@@ -141,18 +150,30 @@ export default function TastingPage() {
         {/* Gallery Section */}
         <section className="py-16 lg:py-24 bg-secondary">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {galleryImages.map((src, index) => (
-                <div key={index} className="aspect-[4/3] relative rounded-xl overflow-hidden">
-                  <Image
-                    src={src}
-                    alt={`Tasting workshop ${index + 1}`}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {galleryImages.map((src, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="aspect-[4/3] relative rounded-xl overflow-hidden">
+                      <Image
+                        src={src}
+                        alt={`Tasting workshop ${index + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4 lg:-left-12" />
+              <CarouselNext className="right-4 lg:-right-12" />
+            </Carousel>
           </div>
         </section>
 
