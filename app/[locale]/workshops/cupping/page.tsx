@@ -16,9 +16,9 @@ import {
 import { Clock, Users, Coffee } from "lucide-react"
 
 const galleryImages = [
-  "/cupping1.JPG",
-  "/cupping2.JPG",
-  "/cupping3.JPG",
+  "/cupping1.avif",
+  "/cupping2.avif",
+  "/cupping3.avif",
 ]
 
 export default function CuppingPage() {

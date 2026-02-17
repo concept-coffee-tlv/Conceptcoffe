@@ -16,9 +16,9 @@ import {
 import { Clock, Users, Coffee } from "lucide-react"
 
 const galleryImages = [
-  "/roasting1.JPG",
-  "/roasting2.JPG",
-  "/roasting3.JPG",
+  "/roasting1.avif",
+  "/roasting2.avif",
+  "/roasting3.avif",
 ]
 
 export default function RoastingPage() {

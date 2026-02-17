@@ -16,9 +16,9 @@ import {
 import { Clock, Users, Coffee } from "lucide-react"
 
 const galleryImages = [
-  "/latteart1.JPG",
-  "/latteart2.JPG",
-  "/latteart3.JPG",
+  "/latteart1.avif",
+  "/latteart2.avif",
+  "/latteart3.avif",
 ]
 
 export default function LatteArtPage() {

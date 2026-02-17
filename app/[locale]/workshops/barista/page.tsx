@@ -16,9 +16,9 @@ import {
 import { Clock, Users, Coffee } from "lucide-react"
 
 const galleryImages = [
-  "/barista1.JPG",
-  "/barista2.JPG",
-  "/barista3.JPG",
+  "/barista1.avif",
+  "/barista2.avif",
+  "/barista3.avif",
 ]
 
 export default function BaristaPage() {

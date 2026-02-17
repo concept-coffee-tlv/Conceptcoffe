@@ -16,11 +16,11 @@ import {
 import { Clock, Users, Coffee } from "lucide-react"
 
 const galleryImages = [
-  "/tasting1.JPG",
-  "/barista1.JPG",
-  "/roasting1.JPG",
-  "/cupping1.JPG",
-  "/latteart1.JPG",
+  "/tasting1.avif",
+  "/barista1.avif",
+  "/roasting1.avif",
+  "/cupping1.avif",
+  "/latteart1.avif",
 ]
 
 export default function CustomPage() {
