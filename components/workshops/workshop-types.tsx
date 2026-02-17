@@ -1,9 +1,7 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
-import Script from "next/script"
-import { useTranslations, useLocale } from "next-intl"
+import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Clock, Users } from "lucide-react"
@@ -40,41 +38,7 @@ export function WorkshopHero() {
   )
 }
 
-export function WorkshopBooking({ show }: { show: boolean }) {
-  const t = useTranslations("workshopsPage")
-  const locale = useLocale()
-
-  if (!show) return null
-
-  const monkeybookUrl = `https://app.monkeybook.io/order/695c2746b187ec242a817de4/695c2746b187ec242a817de3/695c274cbc49194459c67fe5?language=${locale}`
-
-  return (
-    <section id="book" className="py-24 lg:py-32 bg-secondary">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
-            {t("bookingTitle")}
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            {t("bookingSubtitle")}
-          </p>
-        </div>
-
-        <div
-          className="monkeybook-widget-container"
-          data-iframe-src={monkeybookUrl}
-        />
-
-        <Script
-          src="https://widget.monkeybook.io/widget.js?account=695c2746b187ec242a817de4"
-          strategy="afterInteractive"
-        />
-      </div>
-    </section>
-  )
-}
-
-export function WorkshopTypes({ onBookClick }: { onBookClick: () => void }) {
+export function WorkshopTypes() {
   const t = useTranslations("workshopsPage")
 
   return (
@@ -131,30 +95,14 @@ export function WorkshopTypes({ onBookClick }: { onBookClick: () => void }) {
 
             const cardClasses = "group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/50 transition-all w-full lg:w-[calc(33.333%-1.34rem)] cursor-pointer"
 
-            return workshopId === "tasting" ? (
+            return (
               <Link
                 key={workshopId}
-                href="/workshops/tasting"
+                href={`/workshops/${workshopId}`}
                 className={cardClasses}
               >
                 {cardContent}
               </Link>
-            ) : (
-              <div
-                key={workshopId}
-                className={cardClasses}
-                onClick={onBookClick}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault()
-                    onBookClick()
-                  }
-                }}
-              >
-                {cardContent}
-              </div>
             )
           })}
         </div>
@@ -179,19 +127,9 @@ export function WorkshopTypes({ onBookClick }: { onBookClick: () => void }) {
 }
 
 export function WorkshopsContent() {
-  const [showBooking, setShowBooking] = useState(false)
-
-  const handleBookClick = () => {
-    setShowBooking(true)
-    setTimeout(() => {
-      document.getElementById("book")?.scrollIntoView({ behavior: "smooth" })
-    }, 100)
-  }
-
   return (
     <>
-      <WorkshopTypes onBookClick={handleBookClick} />
-      <WorkshopBooking show={showBooking} />
+      <WorkshopTypes />
     </>
   )
 }
