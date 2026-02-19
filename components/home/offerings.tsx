@@ -26,7 +26,7 @@ export function Offerings() {
       tagline: tCorporate("subtitle"),
       description: tCorporate("description"),
       href: "/corporate",
-      image: "/corporate2.jpeg",
+      image: "/corporatenew.png",
       cta: tCorporate("cta"),
       highlights: [tCorporate("feature1"), tCorporate("feature2"), tCorporate("feature3")],
       bestFor: tCorporate("eyebrow"),
