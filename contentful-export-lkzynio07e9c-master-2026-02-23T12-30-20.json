@@ -1,0 +1,766 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lkzynio07e9c"
+          }
+        },
+        "id": "blog",
+        "type": "ContentType",
+        "createdAt": "2026-01-14T13:24:12.865Z",
+        "updatedAt": "2026-01-22T14:38:26.847Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 11,
+        "publishedAt": "2026-01-22T14:38:26.847Z",
+        "firstPublishedAt": "2026-01-14T13:24:13.368Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/lkzynio07e9c/environments/master/content_types/blog"
+      },
+      "displayField": "title",
+      "name": "blog",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "excerpt",
+          "name": "Excerpt",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "coverImage",
+          "name": "Cover Image",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code",
+                "superscript",
+                "subscript",
+                "strikethrough"
+              ],
+              "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "table",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "entry-hyperlink",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, Unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "publishedDate",
+          "name": "Published Date",
+          "type": "Date",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "video",
+          "name": "videourl",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "lkzynio07e9c",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 12,
+        "createdAt": "2026-01-14T13:24:13.471Z",
+        "createdBy": {
+          "sys": {
+            "id": "032abzuCZHXlbKY5eqVRv7",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2026-01-22T14:38:27.988Z",
+        "updatedBy": {
+          "sys": {
+            "id": "032abzuCZHXlbKY5eqVRv7",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "blog",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "excerpt",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "coverImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "publishedDate",
+          "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "video",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lkzynio07e9c"
+          }
+        },
+        "id": "3pv3kBigKHBVz9Lrlnl2aO",
+        "type": "Entry",
+        "createdAt": "2026-01-14T13:49:55.365Z",
+        "updatedAt": "2026-01-25T13:32:52.838Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 30,
+        "publishedAt": "2026-01-25T13:32:52.838Z",
+        "firstPublishedAt": "2026-01-14T13:51:06.612Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "publishedCounter": 9,
+        "version": 31,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "blog"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/lkzynio07e9c/environments/master/entries/3pv3kBigKHBVz9Lrlnl2aO"
+      },
+      "fields": {
+        "title": {
+          "en-US": "How To Make Batch Brew Coffee  (Filter Coffee)"
+        },
+        "slug": {
+          "en-US": "how-to-make-batch-brew-coffee"
+        },
+        "excerpt": {
+          "en-US": "What is batch brew? Batch brew coffee offers a consistent, smooth cup that’s perfect for sharing or enjoying throughout the day."
+        },
+        "coverImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7MqiUSD0Tt0MOAboCdvmHb"
+            }
+          }
+        },
+        "content": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "What is batch brew? Batch brew coffee offers a consistent, smooth cup that’s perfect for sharing or enjoying throughout the day.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Join our hands-on workshops to learn the ideal coffee-to-water ratio, brewing time, and techniques for optimizing flavor extraction. Whether you're a coffee novice or a seasoned enthusiast, our expert tips will elevate your brewing skills and enhance your appreciation for quality coffee.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Or join our hands-on workshops in Tel Aviv to learn the ideal coffee-to-water ratio, the best grind size, and essential brewing techniques. Whether you're a beginner or an enthusiast, mastering batch brew will transform your morning routine and enhance your appreciation for specialty coffee.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "​Want to learn more?",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Come to one of our coffee workshops or order a group coffee workshop!",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "embedded-asset-block",
+                "data": {
+                  "target": {
+                    "sys": {
+                      "id": "1Ej3N5ryd7WV0erSLcYyUB",
+                      "type": "Link",
+                      "linkType": "Asset"
+                    }
+                  }
+                },
+                "content": [
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "publishedDate": {
+          "en-US": "2026-01-22T00:00+02:00"
+        },
+        "video": {
+          "en-US": "https://www.instagram.com/p/C9sFTwSsWC2/?utm_source=ig_embed&utm_campaign=embed_video_watch_again"
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lkzynio07e9c"
+          }
+        },
+        "id": "7MqiUSD0Tt0MOAboCdvmHb",
+        "type": "Asset",
+        "createdAt": "2026-01-22T14:14:20.808Z",
+        "updatedAt": "2026-01-22T14:17:50.745Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2026-01-22T14:17:50.745Z",
+        "firstPublishedAt": "2026-01-22T14:17:50.745Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/lkzynio07e9c/environments/master/assets/7MqiUSD0Tt0MOAboCdvmHb"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Brewing coffe"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/lkzynio07e9c/7MqiUSD0Tt0MOAboCdvmHb/5aff5e5502e0b729139883f67dace48f/getintouch.JPG",
+            "details": {
+              "size": 552842,
+              "image": {
+                "width": 1365,
+                "height": 2048
+              }
+            },
+            "fileName": "getintouch.JPG",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lkzynio07e9c"
+          }
+        },
+        "id": "1Ej3N5ryd7WV0erSLcYyUB",
+        "type": "Asset",
+        "createdAt": "2026-01-25T13:31:49.424Z",
+        "updatedAt": "2026-01-25T13:32:41.202Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2026-01-25T13:32:41.202Z",
+        "firstPublishedAt": "2026-01-25T13:32:41.202Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/lkzynio07e9c/environments/master/assets/1Ej3N5ryd7WV0erSLcYyUB"
+      },
+      "fields": {
+        "title": {
+          "en-US": "video test"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//videos.ctfassets.net/lkzynio07e9c/1Ej3N5ryd7WV0erSLcYyUB/3fd9a37baeff184ebcd9a1109b77bb4f/Corporate_Community_Video.MOV",
+            "details": {
+              "size": 11398728
+            },
+            "fileName": "Corporate Community Video.MOV",
+            "contentType": "video/quicktime"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "032abzJm5sbRIGakdgNaBc",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lkzynio07e9c"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "9c4dda6a-9d4b-4702-a895-2b0bfc027eb6"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "createdAt": "2026-01-14T13:17:18Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "updatedAt": "2026-01-14T13:17:18Z"
+      }
+    }
+  ],
+  "webhooks": [
+  ],
+  "roles": [
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "032abzJWy0fOFFBnOnT0YP",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "lkzynio07e9c"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "createdAt": "2026-01-14T13:17:19Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "032abzuCZHXlbKY5eqVRv7"
+          }
+        },
+        "updatedAt": "2026-01-14T13:17:19Z"
+      }
+    }
+  ]
+}

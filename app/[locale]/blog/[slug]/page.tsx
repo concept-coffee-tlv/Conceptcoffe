@@ -111,45 +111,41 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <Header />
       <main>
-        <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-secondary">
+        <section className="pt-28 pb-16 lg:pt-32 lg:pb-24 bg-background">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-            <div className="max-w-3xl mx-auto">
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
-              >
-                <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
-                {t("backToBlog")}
-              </Link>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors mb-8"
+            >
+              <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+              {t("backToBlog")}
+            </Link>
 
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Left side - Text content */}
               <div dir="ltr">
                 <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">
                   {format(new Date(post.publishedDate), "MMMM d, yyyy")}
                 </p>
-                <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8">
                   {post.title}
                 </h1>
+                <article>
+                  {documentToReactComponents(post.content, renderOptions)}
+                </article>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="py-16 lg:py-24 bg-background">
-          <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-            <div className="max-w-3xl mx-auto">
-              <div className="relative w-full aspect-[16/9] mb-12 rounded-xl overflow-hidden">
+              {/* Right side - Image */}
+              <div className="rounded-xl overflow-hidden max-w-[400px] mx-auto lg:mx-0">
                 <Image
                   src={post.coverImage.url}
                   alt={post.coverImage.title}
-                  fill
-                  className="object-cover"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto"
                   priority
                 />
               </div>
-
-              <article dir="ltr">
-                {documentToReactComponents(post.content, renderOptions)}
-              </article>
             </div>
           </div>
         </section>

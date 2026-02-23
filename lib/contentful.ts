@@ -21,7 +21,7 @@ export interface BlogPost {
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
     const response = await client.getEntries({
-      content_type: 'blog',
+      content_type: 'myBlogs',
       order: ['-fields.publishedDate'],
     })
 
@@ -45,7 +45,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
     const response = await client.getEntries({
-      content_type: 'blog',
+      content_type: 'myBlogs',
       'fields.slug': slug,
       limit: 1,
     })
