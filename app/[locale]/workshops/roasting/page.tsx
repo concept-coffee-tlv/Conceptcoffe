@@ -51,7 +51,7 @@ export default function RoastingPage() {
 
           <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12 pt-16 pb-16 lg:pt-24 lg:pb-20">
             <div className="max-w-2xl">
-              <p className="text-accent font-medium mb-4">{t("tagline").split('\n')[0]}</p>
+              <p className="text-white font-medium mb-4">{t("tagline").split('\n')[0]}</p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 {t("title")}
               </h1>
