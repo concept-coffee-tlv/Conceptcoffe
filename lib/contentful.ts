@@ -25,17 +25,31 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
       order: ['-fields.publishedDate'],
     })
 
-    return response.items.map((item: any) => ({
-      title: item.fields.title,
-      slug: item.fields.slug,
-      excerpt: item.fields.excerpt,
-      coverImage: {
-        url: `https:${item.fields.coverImage.fields.file.url}`,
-        title: item.fields.coverImage.fields.title,
-      },
-      content: item.fields.content,
-      publishedDate: item.fields.publishedDate,
-    }))
+    return response.items
+      .filter((item: any) => {
+        // Skip posts missing required fields
+        const hasRequired =
+          item.fields.title &&
+          item.fields.slug &&
+          item.fields.coverImage?.fields?.file?.url &&
+          item.fields.content &&
+          item.fields.publishedDate
+        if (!hasRequired) {
+          console.warn(`Skipping blog post "${item.fields.title || 'untitled'}" - missing required fields`)
+        }
+        return hasRequired
+      })
+      .map((item: any) => ({
+        title: item.fields.title,
+        slug: item.fields.slug,
+        excerpt: item.fields.excerpt || '',
+        coverImage: {
+          url: `https:${item.fields.coverImage.fields.file.url}`,
+          title: item.fields.coverImage.fields.title || '',
+        },
+        content: item.fields.content,
+        publishedDate: item.fields.publishedDate,
+      }))
   } catch (error) {
     console.error('Error fetching blog posts:', error)
     return []
@@ -55,13 +69,21 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
     }
 
     const item = response.items[0]
+    const coverImage = item.fields.coverImage as any
+
+    // Return null if missing required fields
+    if (!item.fields.title || !item.fields.slug || !coverImage?.fields?.file?.url || !item.fields.content || !item.fields.publishedDate) {
+      console.warn(`Blog post "${slug}" is missing required fields`)
+      return null
+    }
+
     return {
       title: item.fields.title as string,
       slug: item.fields.slug as string,
-      excerpt: item.fields.excerpt as string,
+      excerpt: (item.fields.excerpt as string) || '',
       coverImage: {
-        url: `https:${(item.fields.coverImage as any).fields.file.url}`,
-        title: (item.fields.coverImage as any).fields.title,
+        url: `https:${coverImage.fields.file.url}`,
+        title: coverImage.fields.title || '',
       },
       content: item.fields.content as Document,
       publishedDate: item.fields.publishedDate as string,
