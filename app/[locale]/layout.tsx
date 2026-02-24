@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { DM_Sans, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { notFound } from "next/navigation"
 import { setRequestLocale, getMessages } from "next-intl/server"
 import { NextIntlClientProvider } from "next-intl"
@@ -52,6 +53,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
         </NextIntlClientProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
