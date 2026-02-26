@@ -35,7 +35,7 @@ export function Hero() {
             className="h-40 md:h-56 lg:h-72 w-auto mx-auto"
             priority
           />
-          <p className="mt-3 text-xl md:text-2xl lg:text-3xl text-background/90 whitespace-nowrap mx-auto">
+          <p className="mt-3 text-xl md:text-2xl lg:text-3xl text-background/90 mx-auto">
             {t("tagline")}
           </p>
           <p className="mt-4 text-base text-background/70 leading-relaxed max-w-lg mx-auto">
