@@ -63,10 +63,15 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-            <div className="flex items-center gap-1.5 bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
+            <a
+              href="https://share.google/L2oelEZvINxlnoBFy"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 rounded-full bg-background/10 px-3 py-1.5 backdrop-blur-sm transition-colors hover:bg-background/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+            >
               <Star className="h-4 w-4 fill-accent text-accent" />
               <span className="text-sm font-medium text-background">{t("badge1")}</span>
-            </div>
+            </a>
             <div className="bg-background/10 backdrop-blur-sm px-3 py-1.5 rounded-full">
               <span className="text-sm font-medium text-background">{t("badge2")}</span>
             </div>
