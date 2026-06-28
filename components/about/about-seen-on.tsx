@@ -1,4 +1,4 @@
-"use client"
+use client"
 
 import { useTranslations } from "next-intl"
 
@@ -16,15 +16,13 @@ export function AboutSeenOn() {
         </div>
         <div className="max-w-3xl mx-auto">
           <div className="aspect-video rounded-xl overflow-hidden">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube-nocookie.com/embed/_KsJNgBFJPw"
-              title="Concept:Coffee Featured Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
+            <div
+              className="monkeybook-widget-container w-full h-full"
+              data-iframe-src="https://app.monkeybook.io/order/695c2746b187ec242a817de4/695c2746b187ec242a817de3/6a4148a809b1c4079682c65b?language=en"
+            />
+            <script
+              src="https://widget.monkeybook.io/widget.js?account=695c2746b187ec242a817de4"
+              defer
             />
           </div>
         </div>
