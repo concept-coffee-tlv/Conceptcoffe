@@ -1,12 +1,15 @@
 "use client"
 
+import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 export default function CommunityPage() {
   const t = useTranslations("communityPage")
+  const locale = useLocale()
+  const monkeybookUrl = `https://app.monkeybook.io/order/695c2746b187ec242a817de4/695c2746b187ec242a817de3/6a4148a809b1c4079682c65b?language=${locale}`
 
   return (
     <>
@@ -54,6 +57,29 @@ export default function CommunityPage() {
                 </video>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 lg:py-24 bg-secondary">
+          <div className="mx-auto max-w-[1100px] px-6 lg:px-12">
+            <div className="text-center mb-10">
+              <p className="text-sm font-medium uppercase tracking-widest text-accent mb-3">
+                {t("eventsEyebrow")}
+              </p>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
+                {t("eventsTitle")}
+              </h2>
+            </div>
+
+            <div
+              className="monkeybook-widget-container min-h-[560px]"
+              data-iframe-src={monkeybookUrl}
+            />
+
+            <Script
+              src="https://widget.monkeybook.io/widget.js?account=695c2746b187ec242a817de4"
+              strategy="afterInteractive"
+            />
           </div>
         </section>
       </main>
