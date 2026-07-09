@@ -14,6 +14,7 @@ export function Header() {
 
   const navigation = [
     { name: t("workshops"), href: "/workshops" },
+    { name: t("specialClasses"), href: "/group-workshops" },
     { name: t("corporate"), href: "/corporate" },
     { name: t("community"), href: "/community" },
     { name: t("blog"), href: "/blog" },

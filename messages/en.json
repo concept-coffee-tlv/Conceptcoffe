@@ -1,6 +1,7 @@
 {
   "navigation": {
     "workshops": "Workshops",
+    "specialClasses": "Special Classes",
     "corporate": "Corporate",
     "community": "Community",
     "blog": "Blog",
@@ -414,5 +415,37 @@
     "ctaSubtitle": "Whether you're looking to learn a new skill, celebrate a special occasion, or bring your team together—we'd love to meet you.",
     "ctaButton1": "Explore Workshops",
     "ctaButton2": "Get in Touch"
+  },
+  "groupWorkshopsPage": {
+    "eyebrow": "Curated Coffee Learning",
+    "title": "Special Classes",
+    "subtitle": "One-off, open-signup coffee classes beyond our regular private offerings. Each month, we host one or two special classes focused on topics that interest us—and gather coffee lovers who want to learn alongside kindred spirits.",
+    "cta1": "Book Now",
+    "cta2": "Custom Quote",
+    "sectionTitle": "How Our Special Classes Work",
+    "sectionSubtitle": "Open-signup classes designed for individuals and small groups who share a passion for specialty coffee.",
+    "option1Title": "Monthly Special Classes",
+    "option1Description": "Limited-capacity, open-signup classes hosted once or twice each month. Each class focuses on a specific coffee topic—from advanced tasting to brewing techniques—chosen based on what captures our curiosity.",
+    "option1Feature1": "New topic each month",
+    "option1Feature2": "Open signup—join solo or with friends",
+    "option1Feature3": "Small intimate groups",
+    "option2Title": "Private Classes & Custom Groups",
+    "option2Description": "Want something more tailored? Our main offering is custom, private coffee classes for your group, team, or special occasion. Fully personalized to your interests and pace.",
+    "option2Feature1": "Fully customized experience",
+    "option2Feature2": "Your own private group",
+    "option2Feature3": "Schedule at your convenience",
+    "optionCta": "Get Started",
+    "benefitsEyebrow": "Why Choose Group Workshops",
+    "benefitsTitle": "Create Shared Memories Through Coffee",
+    "benefitsDescription": "Group workshops are more than just learning—they're about building connection, sparking conversation, and creating lasting memories around something meaningful. Whether you're celebrating a milestone or strengthening team bonds, coffee brings people together.",
+    "benefit1Title": "Flexible Scheduling",
+    "benefit1Description": "We work around your schedule. Choose dates, times, and formats that work best for your group.",
+    "benefit2Title": "Custom Experiences",
+    "benefit2Description": "Mix and match workshops or create something entirely unique tailored to your group's interests and coffee level.",
+    "benefit3Title": "Unforgettable Connection",
+    "benefit3Description": "Experience the joy of discovering coffee together, laughing, learning, and creating moments you'll remember.",
+    "ctaTitle": "Ready to Bring Your Group Together?",
+    "ctaDescription": "Whether you're planning a celebration, team event, or just want to share your love of coffee with friends—let's create the perfect experience.",
+    "ctaButton": "Get in Touch"
   }
 }
