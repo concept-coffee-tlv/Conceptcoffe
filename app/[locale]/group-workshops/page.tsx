@@ -21,8 +21,8 @@ export default async function GroupWorkshopsPage({ params }: Props) {
     <>
       <Header />
       <main>
-        <GroupWorkshopsHero />
-        <GroupWorkshopsContent />
+        <GroupWorkshopsHero locale={locale} />
+        <GroupWorkshopsContent locale={locale} />
       </main>
       <Footer />
     </>
