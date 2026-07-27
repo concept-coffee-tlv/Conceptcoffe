@@ -37,6 +37,7 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
       summary: t("conceptCuppingSummary"),
       bullets: [t("conceptCuppingBullet1"), t("conceptCuppingBullet2"), t("conceptCuppingBullet3")],
       image: "/images/cupping.avif",
+      bookingUrl: "https://link.monkeybook.io/4g0vwc",
     },
     {
       id: "history",
@@ -44,6 +45,7 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
       summary: t("coffeeHistorySummary"),
       bullets: [t("coffeeHistoryBullet1"), t("coffeeHistoryBullet2"), t("coffeeHistoryBullet3")],
       image: "/historyofcoffee.avif",
+      bookingUrl: "https://link.monkeybook.io/lm4svr",
     },
   ]
 
@@ -95,7 +97,7 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
                 </ul>
 
                 <a
-                  href="https://link.monkeybook.io/lm4svr"
+                  href={session.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 flex w-full items-center justify-center bg-primary text-primary-foreground py-2 rounded-md font-medium transition-colors hover:bg-primary/90"
