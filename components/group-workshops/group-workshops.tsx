@@ -1,5 +1,20 @@
 import Image from "next/image"
 import { getTranslations } from "next-intl/server"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel"
+
+const blendLabImages = [
+  "/Concept-Blend1.avif",
+  "/Concept-Blend2.avif",
+  "/Concept-Blend3.avif",
+  "/Concept-Blend4.avif",
+  "/Concept-Blend5.avif",
+]
 
 type GroupWorkshopsProps = {
   locale: string
@@ -30,83 +45,91 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
   const t = await getTranslations("groupWorkshopsPage")
   const isHebrew = locale === "he"
 
-  const sessions = [
-    {
-      id: "cupping",
-      title: t("conceptCuppingTitle"),
-      summary: t("conceptCuppingSummary"),
-      bullets: [t("conceptCuppingBullet1"), t("conceptCuppingBullet2"), t("conceptCuppingBullet3")],
-      image: "/images/cupping.avif",
-      bookingUrl: "https://link.monkeybook.io/4g0vwc",
-    },
-    {
-      id: "history",
-      title: t("coffeeHistoryTitle"),
-      summary: t("coffeeHistorySummary"),
-      bullets: [t("coffeeHistoryBullet1"), t("coffeeHistoryBullet2"), t("coffeeHistoryBullet3")],
-      image: "/historyofcoffee.avif",
-      bookingUrl: "https://link.monkeybook.io/lm4svr",
-    },
-  ]
+  const bookingUrl =
+    "https://app.monkeybook.io/experience/695c2746b187ec242a817de4/6a9ffe0e2feeac314b7175ac"
+  const bodyParagraphs = [t("eventBody1"), t("eventBody2"), t("eventBody3"), t("eventBody4")]
+  const learningPoints = [t("learningPoint1"), t("learningPoint2")]
 
   return (
     <section dir={isHebrew ? "rtl" : "ltr"} lang={locale} className="py-24 lg:py-32 bg-background">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="max-w-3xl mb-12">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-4">
-            {t("monthlySessionsEyebrow")}
-          </p>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight">
-            {t("monthlySessionsTitle")}
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            {t("monthlySessionsSubtitle")}
-          </p>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-8">
-          {sessions.map((session) => (
-            <div
-              key={session.id}
-              className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/50 transition-all w-full lg:w-[calc(50%-1rem)]"
+        <div
+          dir="ltr"
+          className="group mx-auto max-w-6xl bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-accent/50 transition-all lg:grid lg:grid-cols-[0.95fr_1.05fr]"
+        >
+          <div className="aspect-[16/10] lg:aspect-auto lg:min-h-[600px] overflow-hidden relative">
+            <Carousel
+              opts={{
+                loop: true,
+              }}
+              className="h-full [&_[data-slot=carousel-content]]:h-full"
             >
-              <div className="aspect-[16/9] overflow-hidden relative">
-                <Image
-                  src={session.image}
-                  alt={session.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+              <CarouselContent className="h-full ml-0">
+                {blendLabImages.map((src, index) => (
+                  <CarouselItem key={src} className="relative h-full pl-0">
+                    <Image
+                      src={src}
+                      alt={`${t("eventTitle")} ${index + 1}`}
+                      fill
+                      sizes="(min-width: 1024px) 45vw, 100vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4 z-10 border-background/70 bg-background/80 text-foreground hover:bg-background" />
+              <CarouselNext className="right-4 z-10 border-background/70 bg-background/80 text-foreground hover:bg-background" />
+            </Carousel>
+          </div>
 
-              <div className="p-6 lg:p-8">
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-4 text-center">
-                  {session.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-center whitespace-pre-line">
-                  {session.summary}
-                </p>
+          <div dir={isHebrew ? "rtl" : "ltr"} className="p-6 md:p-8 lg:p-10 xl:p-12 text-center">
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent mb-4">
+              {t("eventEyebrow")}
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground leading-tight">
+              {t("eventTitle")}
+            </h2>
+            <p className="mt-3 text-lg md:text-xl font-semibold text-foreground leading-relaxed">
+              {t("eventIntro")}
+            </p>
 
-                <ul className="mt-5 space-y-2 text-sm text-muted-foreground text-left">
-                  {session.bullets.map((bullet, index) => (
-                    <li key={`${session.id}-${index}`} className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={session.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 flex w-full items-center justify-center bg-primary text-primary-foreground py-2 rounded-md font-medium transition-colors hover:bg-primary/90"
-                >
-                  {t("bookNow")}
-                </a>
-              </div>
+            <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
+              {bodyParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
-          ))}
+
+            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+              {learningPoints.map((point) => (
+                <li key={point} className="flex items-start justify-center gap-2 text-center">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-6 text-foreground leading-relaxed">
+              {t("takeHomePrefix")}
+              <strong>{t("takeHomeHighlight")}</strong>
+              {t("takeHomeSuffix")}
+            </p>
+
+            <p className="mt-8 text-sm font-medium text-foreground">
+              {t("ctaLine")}
+            </p>
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex w-full items-center justify-center bg-primary text-primary-foreground py-2 rounded-md font-medium transition-colors hover:bg-primary/90"
+            >
+              {t("bookBlendLab")}
+            </a>
+
+            <p className="mt-6 text-sm text-muted-foreground">
+              {t("closingLine")}
+            </p>
+          </div>
         </div>
       </div>
     </section>
