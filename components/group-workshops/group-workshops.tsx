@@ -49,6 +49,7 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
     "https://app.monkeybook.io/experience/695c2746b187ec242a817de4/6a9ffe0e2feeac314b7175ac"
   const bodyParagraphs = [t("eventBody1"), t("eventBody2"), t("eventBody3"), t("eventBody4")]
   const learningPoints = [t("learningPoint1"), t("learningPoint2")]
+  const dateOptions = [t("dateOption1"), t("dateOption2")]
 
   return (
     <section dir={isHebrew ? "rtl" : "ltr"} lang={locale} className="py-24 lg:py-32 bg-background">
@@ -113,6 +114,22 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
               <strong>{t("takeHomeHighlight")}</strong>
               {t("takeHomeSuffix")}
             </p>
+
+            <div className="mt-6">
+              <p className="text-sm font-medium uppercase tracking-[0.3em] text-accent">
+                {t("dateOptionsTitle")}
+              </p>
+              <div className="mt-3 flex flex-wrap justify-center gap-3">
+                {dateOptions.map((dateOption) => (
+                  <span
+                    key={dateOption}
+                    className="rounded-md border border-border bg-secondary px-4 py-2 text-sm font-medium text-foreground"
+                  >
+                    {dateOption}
+                  </span>
+                ))}
+              </div>
+            </div>
 
             <p className="mt-8 text-sm font-medium text-foreground">
               {t("ctaLine")}
