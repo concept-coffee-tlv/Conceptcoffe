@@ -75,8 +75,8 @@ export const publicPages = {
     he: { title: "חוויות קפה בתל אביב-יפו", description: "מחפשים פעילות ביפו? גלו טעימות קפה וסדנאות מעשיות בעברית ובאנגלית בסטודיו Concept:Coffee." },
   },
   "/coffee-workshops-for-groups": {
-    en: { title: "Group Coffee Workshops in Tel Aviv–Jaffa", description: "Plan a guided coffee tasting or hands-on workshop in Tel Aviv–Jaffa for your team, visiting group, or private celebration. Available in English or Hebrew." },
-    he: { title: "סדנאות קפה לקבוצות בתל אביב-יפו", description: "טעימות קפה מודרכות וסדנאות קפה מעשיות בתל אביב-יפו, לימי גיבוש, קבוצות מבקרים וחגיגות פרטיות. בעברית ובאנגלית." },
+    en: { title: "Private Coffee Workshops for Groups in Tel Aviv–Jaffa", description: "Arrange a private coffee tasting or hands-on workshop in Tel Aviv–Jaffa for your team, visiting group, or celebration. Available in English or Hebrew." },
+    he: { title: "סדנאות קפה פרטיות לקבוצות בתל אביב-יפו", description: "טעימות קפה מודרכות וסדנאות קפה פרטיות לקבוצות בתל אביב-יפו. מתאים לימי גיבוש, לקבוצות מבקרים ולחגיגות. בעברית ובאנגלית." },
   },
 } satisfies Record<string, LocalizedCopy>
 

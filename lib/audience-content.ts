@@ -24,7 +24,7 @@ export const visitorCopy = {
     ],
     location: "Where to find the studio",
     directions: "Get directions",
-    groups: "Planning a visit for an organized group?",
+    groups: "Planning a private coffee workshop for your group?",
   },
   he: {
     title: "חוויות קפה בתל אביב-יפו",
@@ -51,22 +51,22 @@ export const visitorCopy = {
     ],
     location: "איפה נמצא הסטודיו?",
     directions: "הוראות הגעה",
-    groups: "מתכננים ביקור לקבוצה מאורגנת?",
+    groups: "מתכננים סדנת קפה פרטית לקבוצה שלכם?",
   },
 }
 
 export const groupCopy = {
   en: {
-    title: "Coffee workshops for groups",
-    intro: "Get together over good coffee in Tel Aviv–Jaffa. Taste something new, ask questions, and get to know specialty coffee.",
+    title: "Private coffee workshops for groups",
+    intro: "Get together over good coffee in Tel Aviv–Jaffa. Each workshop is arranged just for your group, with time to taste something new, ask questions, and get to know specialty coffee.",
     optionsTitle: "What we offer",
     options: ["Guided coffee tastings", "Hands-on coffee workshops", "Custom group sessions"],
     audienceTitle: "Who we welcome",
     audience: "Planning a team-building day, a university visit, or an activity for an organized travel group? We’re also happy to welcome friends and family getting together for a private celebration.",
     languages: "Workshops are available in English and Hebrew, and beginners are welcome. Tell us who’s coming and what you’d like to try, and we’ll help you choose an activity for your group.",
     photo: "Guests smiling and sharing coffee around a table at a Concept:Coffee workshop",
-    inquiryLink: "Tell us about your group",
-    askTitle: "Send an inquiry",
+    inquiryLink: "Ask about a private workshop for your group",
+    askTitle: "Private group workshop inquiry",
     form: {
       name: "Your name",
       contact: "Email or phone",
@@ -100,16 +100,16 @@ export const groupCopy = {
     },
   },
   he: {
-    title: "סדנאות קפה לקבוצות",
-    intro: "מחפשים פעילות קבוצתית בתל אביב-יפו? בואו לטעום משהו חדש, לשאול שאלות ולהכיר יחד את עולם קפה הספיישלטי.",
+    title: "סדנאות קפה פרטיות לקבוצות",
+    intro: "מחפשים פעילות קבוצתית בתל אביב-יפו? כל סדנה מתואמת במיוחד לקבוצה שלכם. בואו לטעום משהו חדש, לשאול שאלות ולהכיר יחד את עולם קפה הספיישלטי.",
     optionsTitle: "מה אנחנו מציעים",
     options: ["טעימות קפה מודרכות", "סדנאות קפה מעשיות", "מפגשים לקבוצות בהתאמה אישית"],
     audienceTitle: "למי הסדנאות מתאימות?",
     audience: "מתכננים יום גיבוש לצוות, ביקור לימודי או פעילות לקבוצת מטיילים? נשמח לארח גם משפחות וחברים שמתכנסים לחגיגה פרטית.",
     languages: "אפשר לתאם סדנה בעברית או באנגלית, והסדנאות מתאימות גם למתחילים. ספרו לנו מי מגיע ומה מסקרן אתכם, ונעזור לכם לבחור פעילות שמתאימה לקבוצה.",
     photo: "משתתפים מחייכים ושותים קפה סביב שולחן בסדנת Concept:Coffee",
-    inquiryLink: "ספרו לנו על הקבוצה",
-    askTitle: "שליחת פנייה",
+    inquiryLink: "בררו על סדנה פרטית לקבוצה שלכם",
+    askTitle: "פנייה לגבי סדנה פרטית לקבוצה",
     form: {
       name: "השם שלכם",
       contact: "אימייל או טלפון",
