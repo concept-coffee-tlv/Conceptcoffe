@@ -10,7 +10,10 @@ type LocalizedCopy = Record<Locale, Copy>
 export type LocalePageProps = { params: Promise<{ locale: string }> }
 
 export const audiencePaths = ["/coffee-experiences-tel-aviv", "/coffee-workshops-for-groups"] as const
-export const audiencePagesPublished = process.env.PUBLISH_AUDIENCE_PAGES === "true"
+const publishAudiencePages = process.env.PUBLISH_AUDIENCE_PAGES
+export const audiencePagesPublished = publishAudiencePages === undefined
+  ? process.env.VERCEL_ENV === "production"
+  : publishAudiencePages === "true"
 export const isPreview = process.env.VERCEL_ENV === "preview"
 
 export const publicPages = {

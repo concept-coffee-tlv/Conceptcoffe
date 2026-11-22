@@ -43,7 +43,7 @@ Production field LCP, INP and CLS, analytics ingestion, email delivery and end-t
 
 ## Review and release
 
-Set `SHOW_AUDIENCE_DRAFTS=true` at build and start time to review the pages in a local production build. In a protected Vercel preview, the four audience URLs are available by default and carry noindex. The default production build excludes them. After owner approval, setting `PUBLISH_AUDIENCE_PAGES=true` enables the audience routes and their discovery links.
+Set `SHOW_AUDIENCE_DRAFTS=true` at build and start time to review the pages in a local production build. In a protected Vercel preview, the four audience URLs are available by default and carry noindex. The approved audience routes, sitemap entries and discovery links are enabled by default in Vercel production.
 
 Confirm the studio capacity and venue wording, policy and photo permissions, and complete the provider and dashboard checks before release. The changes were prepared on a review branch. Production was not deployed.
 

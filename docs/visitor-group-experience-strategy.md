@@ -10,7 +10,7 @@
 
 A qualitative search review found Concept:Coffee’s homepage, workshop detail pages and About page competing for coffee-specific local terms. Broader Jaffa activity searches also surfaced destination guides and tours, indicating a separate visitor decision about where a workshop fits into their day. No paid search data or keyword volume was available. The copy leads with actual local and booking information. [Concept:Coffee workshop directory](https://www.concept-coffee.com/en/workshops) · [Tel Aviv–Yafo tourism](https://www.visit-tel-aviv.com/)
 
-Both landing pages are available in development and Vercel preview. They are excluded from the production sitemap and return 404 on the default production build. Once the owner approves both pages and confirms the address and inquiry journey, `PUBLISH_AUDIENCE_PAGES=true` enables indexing and selected links from the workshop directory and corporate page. The homepage and global navigation are outside this link rollout. After launch, add links from genuinely related guides as the corresponding content is approved.
+Both landing pages are available in development and Vercel preview. The approved pages are published in Vercel production by default, with sitemap entries and links from the workshop directory and corporate page. Set `PUBLISH_AUDIENCE_PAGES=false` in production and redeploy to hide the pages and their links. After launch, add links from related guides as the corresponding content is approved.
 
 ## Group inquiries and follow-up
 
