@@ -1,14 +1,12 @@
-"use client"
-
+import { site, studioAddress } from "@/lib/site"
 import Image from "next/image"
 import { Instagram, MapPin, Phone, Mail } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
 
 export function Footer() {
   const t = useTranslations("footer")
-  const tNav = useTranslations("navigation")
-  const tContact = useTranslations("contact")
+  const address = studioAddress(useLocale())
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -20,8 +18,9 @@ export function Footer() {
               <Image
                 src="/conceptcoffeelogo.png"
                 alt="concept:coffee"
-                width={220}
-                height={60}
+                width={84}
+                height={84}
+                sizes="84px"
                 className="h-14 w-auto scale-150 origin-left"
               />
             </Link>
@@ -30,7 +29,7 @@ export function Footer() {
             </p>
             <div className="mt-6">
               <a
-                href="https://www.instagram.com/conceptcoffee_tlv"
+                href={site.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
@@ -101,18 +100,18 @@ export function Footer() {
             <div className="mt-4 space-y-3 text-sm text-primary-foreground/80">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
-                <span>{tContact("address")}</span>
+                <span>{address}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0" />
-                <a href="tel:+972584001289" className="hover:text-primary-foreground transition-colors">
-                  058-400-1289
+                <a href={`tel:${site.phone}`} className="hover:text-primary-foreground transition-colors">
+                  {site.phoneDisplay}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0" />
-                <a href="mailto:evan@concept-coffee.com" className="hover:text-primary-foreground transition-colors">
-                  evan@concept-coffee.com
+                <a href={`mailto:${site.email}`} className="hover:text-primary-foreground transition-colors">
+                  {site.email}
                 </a>
               </div>
             </div>

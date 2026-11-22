@@ -1,10 +1,13 @@
-"use client"
-
+import { TrackedAnchor } from "@/components/tracked-anchor"
+import { site } from "@/lib/site"
+import { PageStructuredData } from "@/components/structured-data"
+import { canViewAudiencePages, pageMetadata, type LocalePageProps } from "@/lib/seo"
+import { groupCopy } from "@/lib/audience-content"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { useTranslations } from "next-intl"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Link } from "@/src/i18n/navigation"
 
 const brands = [
@@ -14,13 +17,18 @@ const brands = [
   { name: "Citrus and Salt", logo: "/brands/citrusandsalt.avif" },
 ]
 
-export default function CorporatePage() {
-  const t = useTranslations("corporatePage")
+export const generateMetadata = pageMetadata("/corporate")
+
+export default async function CorporatePage({ params }: LocalePageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations("corporatePage")
 
   return (
     <>
       <Header />
-      <main>
+      <PageStructuredData locale={locale} path="/corporate" service />
+      <main id="main-content" tabIndex={-1}>
         <section className="pt-28 pb-8 lg:pt-32 lg:pb-12 bg-background">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -36,16 +44,21 @@ export default function CorporatePage() {
                   <p>{t("paragraph1")}</p>
                   <p>{t("paragraph2")}</p>
                 </div>
-                <div className="mt-10">
+                <div className="mt-10 flex flex-wrap items-center gap-4">
                   <Button
                     asChild
                     size="lg"
                     className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
                   >
-                    <a href="https://wa.me/972584001289" target="_blank" rel="noopener noreferrer">
+                    <TrackedAnchor href={site.whatsapp} target="_blank" rel="noopener noreferrer" event="corporate_inquiry_clicked" properties={{ locale, channel: "whatsapp" }}>
                       {t("cta")}
-                    </a>
+                    </TrackedAnchor>
                   </Button>
+                  {canViewAudiencePages() && (
+                    <Button asChild variant="outline" size="lg">
+                      <Link href="/coffee-workshops-for-groups#group-inquiry">{groupCopy[locale === "he" ? "he" : "en"].title}</Link>
+                    </Button>
+                  )}
                 </div>
               </div>
 

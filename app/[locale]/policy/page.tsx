@@ -1,24 +1,18 @@
+import { pageMetadata, type LocalePageProps } from "@/lib/seo"
 import { setRequestLocale } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-export const metadata = {
-  title: "Privacy Policy | concept:coffee",
-  description: "Privacy policy, booking and cancellation policy, and delivery policy for concept:coffee.",
-}
+export const generateMetadata = pageMetadata("/policy")
 
-type Props = {
-  params: Promise<{ locale: string }>
-}
-
-export default async function PolicyPage({ params }: Props) {
+export default async function PolicyPage({ params }: LocalePageProps) {
   const { locale } = await params
   setRequestLocale(locale)
 
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1} lang="en" dir="ltr">
         <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-secondary">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="max-w-3xl mx-auto text-center">
@@ -61,19 +55,19 @@ export default async function PolicyPage({ params }: Props) {
 
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Transfers:</h3>
-                    <p>Can't make it? You're welcome to transfer your booking to a friend—just let us know in advance.</p>
+                    <p>Can&#39;t make it? You&#39;re welcome to transfer your booking to a friend—just let us know in advance.</p>
                   </div>
 
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Minimum Attendance:</h3>
-                    <p>Each workshop requires a minimum of 2 participants to run. In the rare case that a session doesn't meet the minimum, we'll contact you at least 24 hours in advance to reschedule or offer a full refund. Cancelling of transactions will be done in accordance to חוק הגנת הצרכן, תשמ"א-1981</p>
+                    <p>Each workshop requires a minimum of 2 participants to run. In the rare case that a session doesn&#39;t meet the minimum, we&#39;ll contact you at least 24 hours in advance to reschedule or offer a full refund. Cancelling of transactions will be done in accordance to חוק הגנת הצרכן, תשמ&quot;א-1981</p>
                   </div>
 
                   <p>In accordance to Israeli credit card laws you must be 18 years of age or older to purchase (not to attend) the workshops.</p>
 
                   <p>Concept:Coffee is un-responsible for direct damages due to use of our services/products purchased through the site.</p>
 
-                  <p>When you book through our website (powered by Wix), we only collect the info we need to confirm your spot and stay in touch—like your name, email, and payment details. Everything is handled securely, and your data stays private. We never share your information with anyone else unless we're legally required to. Payments are processed through Wix's secure system, and we don't store your credit card info.</p>
+                  <p>When you book through our website (powered by Wix), we only collect the info we need to confirm your spot and stay in touch—like your name, email, and payment details. Everything is handled securely, and your data stays private. We never share your information with anyone else unless we&#39;re legally required to. Payments are processed through Wix&#39;s secure system, and we don&#39;t store your credit card info.</p>
                 </div>
               </div>
 
@@ -90,7 +84,7 @@ export default async function PolicyPage({ params }: Props) {
                     <ul className="list-disc list-inside space-y-1">
                       <li>All workshops take place on the date, time, and location listed on the website at the time of booking.</li>
                       <li>After booking, you will receive a confirmation email with full workshop details, including address and start time.</li>
-                      <li>It is the participant's responsibility to arrive on time for the scheduled workshop.</li>
+                      <li>It is the participant&#39;s responsibility to arrive on time for the scheduled workshop.</li>
                       <li>If Concept:Coffee needs to reschedule a session, participants will be notified in advance and may choose between a new date or a full refund.</li>
                     </ul>
                   </div>
@@ -100,7 +94,7 @@ export default async function PolicyPage({ params }: Props) {
                     <ul className="list-disc list-inside space-y-1">
                       <li>Orders are shipped via a third-party courier service or available for pickup at the studio with prior coordination.</li>
                       <li>Standard delivery times are 3–7 business days, depending on location and product availability.</li>
-                      <li>Delays caused by courier services, weather, holidays, or other factors outside of Concept:Coffee's control may occur.</li>
+                      <li>Delays caused by courier services, weather, holidays, or other factors outside of Concept:Coffee&#39;s control may occur.</li>
                       <li>In the event of a significant delay, we will do our best to keep you updated.</li>
                     </ul>
                   </div>
@@ -170,7 +164,7 @@ export default async function PolicyPage({ params }: Props) {
                       <li>Analytics tools (e.g., Google Analytics)</li>
                     </ul>
                     <p className="mt-2">These services may receive limited information only as necessary to perform their functions.</p>
-                    <p>Information collected through our website may be stored on secure servers located outside of Israel, in accordance with Wix's data protection practices.</p>
+                    <p>Information collected through our website may be stored on secure servers located outside of Israel, in accordance with Wix&#39;s data protection practices.</p>
                   </div>
 
                   <div>

@@ -1,8 +1,9 @@
-"use client"
-
+import { TrackedAnchor } from "@/components/tracked-anchor"
+import { PageStructuredData } from "@/components/structured-data"
+import { pageMetadata, type LocalePageProps } from "@/lib/seo"
 import Image from "next/image"
-import Script from "next/script"
-import { useTranslations, useLocale } from "next-intl"
+import { BookingWidget } from "@/components/booking-widget"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -21,28 +22,30 @@ const galleryImages = [
   "/cupping3.avif",
 ]
 
-export default function CuppingPage() {
-  const t = useTranslations("cuppingPage")
-  const tWorkshops = useTranslations("workshopsPage.workshops.cupping")
-  const locale = useLocale()
+export const generateMetadata = pageMetadata("/workshops/cupping")
 
+export default async function CuppingPage({ params }: LocalePageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations("cuppingPage")
+  const tWorkshops = await getTranslations("workshopsPage.workshops.cupping")
+
+  const tBooking = await getTranslations("accessibility")
   const monkeybookUrl = `https://app.monkeybook.io/order/695c2746b187ec242a817de4/695c2746b187ec242a817de3/695c274cbc49194459c67fe5?language=${locale}`
-
-  const scrollToBooking = () => {
-    document.getElementById("book")?.scrollIntoView({ behavior: "smooth" })
-  }
 
   return (
     <>
       <Header />
-      <main>
+      <PageStructuredData locale={locale} path="/workshops/cupping" name={t("title")} service />
+      <main id="main-content" tabIndex={-1}>
         {/* Hero Section with Image */}
         <section className="relative pt-24 lg:pt-32">
           <div className="absolute inset-0 h-[60vh] lg:h-[70vh]">
             <Image
               src="/images/cupping.avif"
-              alt="Coffee Cupping Workshop"
+              alt=""
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -130,10 +133,12 @@ export default function CuppingPage() {
                   </div>
 
                   <Button
-                    onClick={scrollToBooking}
+                    asChild
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-lg"
                   >
-                    {t("bookNow")}
+                    <TrackedAnchor href="#book" event="booking_link_clicked" properties={{ locale, workshop: "cupping", destination: "embedded" }}>
+                      {t("bookNow")}
+                    </TrackedAnchor>
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center mt-4">
@@ -151,32 +156,35 @@ export default function CuppingPage() {
             <Carousel
               opts={{
                 align: "start",
+                direction: locale === "he" ? "rtl" : "ltr",
                 loop: true,
               }}
+              aria-label={tBooking("workshopGallery")}
               className="w-full"
             >
-              <CarouselContent className="-ml-4">
+              <CarouselContent>
                 {galleryImages.map((src, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="aspect-[4/3] relative rounded-xl overflow-hidden">
                       <Image
                         src={src}
-                        alt={`Cupping workshop ${index + 1}`}
+                        alt={tBooking("workshopPhoto", { workshop: t("title"), number: index + 1 })}
                         fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className="object-cover"
                       />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4 lg:-left-12" />
-              <CarouselNext className="right-4 lg:-right-12" />
+              <CarouselPrevious className="start-4 lg:-start-12" aria-label={tBooking("previousSlide")} />
+              <CarouselNext className="end-4 lg:-end-12" aria-label={tBooking("nextSlide")} />
             </Carousel>
           </div>
         </section>
 
         {/* Booking Section */}
-        <section id="book" className="py-24 lg:py-32 bg-background">
+        <section id="book" tabIndex={-1} className="scroll-mt-24 py-24 lg:py-32 bg-background">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">
@@ -187,14 +195,12 @@ export default function CuppingPage() {
               </p>
             </div>
 
-            <div
-              className="monkeybook-widget-container"
-              data-iframe-src={monkeybookUrl}
-            />
-
-            <Script
-              src="https://widget.monkeybook.io/widget.js?account=695c2746b187ec242a817de4"
-              strategy="afterInteractive"
+            <BookingWidget
+              url={monkeybookUrl}
+              title={t("bookingTitle")}
+              locale={locale}
+              workshop="cupping"
+              fallbackLabel={tBooking("openBooking")}
             />
           </div>
         </section>

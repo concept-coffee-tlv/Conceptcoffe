@@ -1,5 +1,3 @@
-"use client"
-
 import { Star } from "lucide-react"
 import { useTranslations } from "next-intl"
 
@@ -81,7 +79,7 @@ export function GoogleReviews() {
                 <StarRating rating={review.rating} />
               </div>
               <p className="text-sm text-foreground leading-relaxed flex-grow">
-                "{review.text}"
+                &quot;{review.text}&quot;
               </p>
               <p className="text-sm font-semibold text-foreground mt-4 pt-4 border-t border-border">{review.author}</p>
             </div>

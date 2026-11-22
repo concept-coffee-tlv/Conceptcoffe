@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility text-strong-accent {
+  color: color-mix(in oklab, var(--accent) 88%, var(--foreground));
+}
+
 /* New warm coffee-inspired color palette */
 :root {
   --background: oklch(0.98 0.005 60);

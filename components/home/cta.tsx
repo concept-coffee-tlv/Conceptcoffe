@@ -1,5 +1,3 @@
-"use client"
-
 import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
@@ -13,7 +11,7 @@ export function CTA() {
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
           {t("title")}
         </h2>
-        <p className="mt-6 text-lg text-accent-foreground/90 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-6 text-lg text-accent-foreground max-w-2xl mx-auto leading-relaxed">
           {t("description")}
         </p>
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">

@@ -1,3 +1,5 @@
+import { PageStructuredData } from "@/components/structured-data"
+import { pageMetadata, type LocalePageProps } from "@/lib/seo"
 import { setRequestLocale } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -7,24 +9,17 @@ import { AboutValues } from "@/components/about/about-values"
 import { AboutCTA } from "@/components/about/about-cta"
 import { AboutSeenOn } from "@/components/about/about-seen-on"
 
-export const metadata = {
-  title: "About Us | concept:coffee",
-  description:
-    "Learn about concept:coffee, Tel Aviv's specialty coffee education studio. Meet founder Evan and discover our passion for sharing coffee knowledge.",
-}
+export const generateMetadata = pageMetadata("/about")
 
-type Props = {
-  params: Promise<{ locale: string }>
-}
-
-export default async function AboutPage({ params }: Props) {
+export default async function AboutPage({ params }: LocalePageProps) {
   const { locale } = await params
   setRequestLocale(locale)
 
   return (
     <>
       <Header />
-      <main>
+      <PageStructuredData locale={locale} path="/about" />
+      <main id="main-content" tabIndex={-1}>
         <AboutHero />
         <AboutStory />
         <AboutValues />
