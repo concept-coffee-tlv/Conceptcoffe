@@ -1,43 +1,32 @@
-"use client"
-
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
+import { HeroVideo } from "@/components/home/hero-video"
 import { Star } from "lucide-react"
 
 export function Hero() {
   const t = useTranslations("hero")
+  const a11y = useTranslations("accessibility")
 
   return (
     <section className="relative min-h-screen flex items-center pt-20">
-      {/* Background video */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/videos/herovideo_compressed.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-foreground/50" />
-      </div>
+      <HeroVideo playLabel={a11y("playVideo")} pauseLabel={a11y("pauseVideo")} />
 
       <div className="relative z-10 w-full px-6 lg:px-12 py-24">
         <div className="max-w-4xl mx-auto text-center">
           <Image
             src="/conceptcoffeelogo.png"
             alt="Concept:Coffee"
-            width={1000}
-            height={250}
+            width={288}
+            height={288}
             className="h-40 md:h-56 lg:h-72 w-auto mx-auto"
-            priority
+            sizes="(min-width: 1024px) 288px, (min-width: 768px) 224px, 160px"
+            preload
           />
-          <p className="mt-3 text-xl md:text-2xl lg:text-3xl text-background/90 mx-auto">
+          <h1 className="mt-3 text-xl md:text-2xl lg:text-3xl text-background/90 mx-auto">
             {t("tagline")}
-          </p>
+          </h1>
           <p className="mt-4 text-base text-background/70 leading-relaxed max-w-lg mx-auto">
             {t("description")}
           </p>

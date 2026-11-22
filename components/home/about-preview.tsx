@@ -1,5 +1,4 @@
-"use client"
-
+import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
@@ -7,16 +6,20 @@ import { Button } from "@/components/ui/button"
 export function AboutPreview() {
   const t = useTranslations("meetEvan")
 
+  const a11y = useTranslations("accessibility")
+
   return (
     <section className="py-24 lg:py-32 bg-secondary">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-lg">
-              <img
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+              <Image
                 src="/evan.avif"
-                alt="Evan, founder of concept:coffee"
-                className="w-full h-full object-cover"
+                alt={a11y("founderPhoto")}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -end-6 bg-accent text-accent-foreground p-6 rounded-lg max-w-[200px]">
@@ -26,7 +29,7 @@ export function AboutPreview() {
           </div>
 
           <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-accent mb-4">{t("eyebrow")}</p>
+            <p className="text-sm font-medium uppercase tracking-widest text-strong-accent mb-4">{t("eyebrow")}</p>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground leading-tight">
               {t("title")}
             </h2>

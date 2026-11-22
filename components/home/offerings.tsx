@@ -1,11 +1,9 @@
-"use client"
-
+import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
 import { CheckCircle2 } from "lucide-react"
 
 export function Offerings() {
-  const t = useTranslations()
   const tChoose = useTranslations("chooseExperience")
   const tPrivate = useTranslations("privateSessions")
   const tCorporate = useTranslations("corporateEvents")
@@ -56,10 +54,12 @@ export function Offerings() {
               className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all hover:border-accent/50 flex flex-col cursor-pointer"
             >
               <div className="aspect-[4/3] overflow-hidden relative">
-                <img
+                <Image
                   src={offering.image || "/placeholder.svg"}
-                  alt={offering.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 start-4">
                   <span className="bg-background/90 backdrop-blur-sm text-foreground text-xs font-medium px-3 py-1.5 rounded-full">

@@ -1,9 +1,10 @@
-"use client"
-
+import Image from "next/image"
 import { useTranslations } from "next-intl"
 
 export function AboutStory() {
   const t = useTranslations("aboutPage")
+
+  const a11y = useTranslations("accessibility")
 
   return (
     <section className="py-16 lg:py-20 bg-background">
@@ -22,11 +23,13 @@ export function AboutStory() {
             </div>
           </div>
           <div className="order-1 lg:order-2 relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-lg">
-              <img
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+              <Image
                 src="/aboutus.jpg"
-                alt="Evan, founder of concept:coffee"
-                className="w-full h-full object-cover"
+                alt={a11y("founderPhoto")}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg">

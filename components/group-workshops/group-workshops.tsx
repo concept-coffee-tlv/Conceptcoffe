@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Link } from "@/src/i18n/navigation"
 import { getTranslations } from "next-intl/server"
 import {
   Carousel,
@@ -45,11 +46,13 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
   const t = await getTranslations("groupWorkshopsPage")
   const isHebrew = locale === "he"
 
-  const bookingUrl =
-    "https://app.monkeybook.io/experience/695c2746b187ec242a817de4/6a9ffe0e2feeac314b7175ac"
   const bodyParagraphs = [t("eventBody1"), t("eventBody2"), t("eventBody3"), t("eventBody4")]
   const learningPoints = [t("learningPoint1"), t("learningPoint2")]
-  const dateOptions = [t("dateOption1"), t("dateOption2")]
+  const dateOptions = [
+    { dateTime: "2026-09-25T10:00:00+03:00", label: t("dateOption1") },
+    { dateTime: "2026-09-24T18:00:00+03:00", label: t("dateOption2") },
+  ]
+  const a11y = await getTranslations("accessibility")
 
   return (
     <section dir={isHebrew ? "rtl" : "ltr"} lang={locale} className="py-24 lg:py-32 bg-background">
@@ -63,11 +66,12 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
               opts={{
                 loop: true,
               }}
+              aria-label={a11y("workshopGallery")}
               className="h-full [&_[data-slot=carousel-content]]:h-full"
             >
-              <CarouselContent className="h-full ml-0">
+              <CarouselContent className="h-full ms-0">
                 {blendLabImages.map((src, index) => (
-                  <CarouselItem key={src} className="relative h-full pl-0">
+                  <CarouselItem key={src} className="relative h-full ps-0">
                     <Image
                       src={src}
                       alt={`${t("eventTitle")} ${index + 1}`}
@@ -78,8 +82,8 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4 z-10 border-background/70 bg-background/80 text-foreground hover:bg-background" />
-              <CarouselNext className="right-4 z-10 border-background/70 bg-background/80 text-foreground hover:bg-background" />
+              <CarouselPrevious aria-label={a11y("previousSlide")} className="start-4 z-10 border-background/70 bg-background/80 text-foreground hover:bg-background" />
+              <CarouselNext aria-label={a11y("nextSlide")} className="end-4 z-10 border-background/70 bg-background/80 text-foreground hover:bg-background" />
             </Carousel>
           </div>
 
@@ -121,12 +125,13 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
               </p>
               <div className="mt-3 flex flex-wrap justify-center gap-3">
                 {dateOptions.map((dateOption) => (
-                  <span
-                    key={dateOption}
+                  <time
+                    key={dateOption.dateTime}
+                    dateTime={dateOption.dateTime}
                     className="rounded-md border border-border bg-secondary px-4 py-2 text-sm font-medium text-foreground"
                   >
-                    {dateOption}
-                  </span>
+                    {dateOption.label}
+                  </time>
                 ))}
               </div>
             </div>
@@ -134,14 +139,12 @@ export async function GroupWorkshopsContent({ locale }: GroupWorkshopsProps) {
             <p className="mt-8 text-sm font-medium text-foreground">
               {t("ctaLine")}
             </p>
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/community"
               className="mt-3 flex w-full items-center justify-center bg-primary text-primary-foreground py-2 rounded-md font-medium transition-colors hover:bg-primary/90"
             >
-              {t("bookBlendLab")}
-            </a>
+              {t("communityLink")}
+            </Link>
 
             <p className="mt-6 text-sm text-muted-foreground">
               {t("closingLine")}

@@ -1,10 +1,12 @@
-"use client"
-
+import { TrackedAnchor } from "@/components/tracked-anchor"
+import { site } from "@/lib/site"
+import { PageStructuredData } from "@/components/structured-data"
+import { audiencePagesPublished, pageMetadata, type LocalePageProps } from "@/lib/seo"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { useTranslations } from "next-intl"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Link } from "@/src/i18n/navigation"
 
 const brands = [
@@ -14,13 +16,18 @@ const brands = [
   { name: "Citrus and Salt", logo: "/brands/citrusandsalt.avif" },
 ]
 
-export default function CorporatePage() {
-  const t = useTranslations("corporatePage")
+export const generateMetadata = pageMetadata("/corporate")
+
+export default async function CorporatePage({ params }: LocalePageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations("corporatePage")
 
   return (
     <>
       <Header />
-      <main>
+      <PageStructuredData locale={locale} path="/corporate" service />
+      <main id="main-content" tabIndex={-1}>
         <section className="pt-28 pb-8 lg:pt-32 lg:pb-12 bg-background">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -42,9 +49,9 @@ export default function CorporatePage() {
                     size="lg"
                     className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
                   >
-                    <a href="https://wa.me/972584001289" target="_blank" rel="noopener noreferrer">
+                    <TrackedAnchor href={site.whatsapp} target="_blank" rel="noopener noreferrer" event="corporate_inquiry_clicked" properties={{ locale, channel: "whatsapp" }}>
                       {t("cta")}
-                    </a>
+                    </TrackedAnchor>
                   </Button>
                 </div>
               </div>
@@ -98,6 +105,11 @@ export default function CorporatePage() {
             </div>
           </div>
         </section>
+        {audiencePagesPublished && (
+          <div className="mx-auto max-w-[1400px] px-6 py-9 font-medium underline underline-offset-4 lg:px-12">
+            <Link href="/coffee-workshops-for-groups">{locale === "he" ? "סדנאות קפה לקבוצות" : "Coffee workshops for groups"}</Link>
+          </div>
+        )}
       </main>
       <Footer />
     </>

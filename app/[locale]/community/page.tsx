@@ -1,20 +1,25 @@
-"use client"
-
-import Script from "next/script"
+import { PageStructuredData } from "@/components/structured-data"
+import { pageMetadata, type LocalePageProps } from "@/lib/seo"
+import { BookingWidget } from "@/components/booking-widget"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { useLocale, useTranslations } from "next-intl"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 
-export default function CommunityPage() {
-  const t = useTranslations("communityPage")
-  const locale = useLocale()
+export const generateMetadata = pageMetadata("/community")
+
+export default async function CommunityPage({ params }: LocalePageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations("communityPage")
+  const tBooking = await getTranslations("accessibility")
   const monkeybookUrl = `https://app.monkeybook.io/order/695c2746b187ec242a817de4/695c2746b187ec242a817de3/6a4148a809b1c4079682c65b?language=${locale}`
 
   return (
     <>
       <Header />
-      <main>
+      <PageStructuredData locale={locale} path="/community" />
+      <main id="main-content" tabIndex={-1}>
         <section className="pt-28 pb-8 lg:pt-32 lg:pb-12 bg-background">
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -71,14 +76,13 @@ export default function CommunityPage() {
               </h2>
             </div>
 
-            <div
-              className="monkeybook-widget-container min-h-[560px]"
-              data-iframe-src={monkeybookUrl}
-            />
-
-            <Script
-              src="https://widget.monkeybook.io/widget.js?account=695c2746b187ec242a817de4"
-              strategy="afterInteractive"
+            <BookingWidget
+              url={monkeybookUrl}
+              title={t("eventsTitle")}
+              locale={locale}
+              workshop="community"
+              fallbackLabel={tBooking("openBooking")}
+              minHeight={560}
             />
           </div>
         </section>

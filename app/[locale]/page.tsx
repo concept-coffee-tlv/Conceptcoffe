@@ -1,3 +1,4 @@
+import { pageMetadata, type LocalePageProps } from "@/lib/seo"
 import { setRequestLocale } from "next-intl/server"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -9,18 +10,16 @@ import { CTA } from "@/components/home/cta"
 import { FAQ } from "@/components/home/faq"
 import { LocationMap } from "@/components/location-map"
 
-type Props = {
-  params: Promise<{ locale: string }>
-}
+export const generateMetadata = pageMetadata("")
 
-export default async function HomePage({ params }: Props) {
+export default async function HomePage({ params }: LocalePageProps) {
   const { locale } = await params
   setRequestLocale(locale)
 
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <Offerings />
         <AboutPreview />

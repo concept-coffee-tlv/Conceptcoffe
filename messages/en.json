@@ -163,7 +163,6 @@
     "sectionTitle": "Find Us",
     "title": "Visit Our Studio",
     "location": "Location",
-    "address": "Yonatan Ratosh 2, Tel Aviv–Yafo",
     "phone": "Phone",
     "email": "Email",
     "whatsapp": "WhatsApp",
@@ -183,7 +182,8 @@
   },
   "languageSwitcher": {
     "en": "English",
-    "he": "עברית"
+    "he": "עברית",
+    "label": "EN, choose language"
   },
   "blogPage": {
     "eyebrow": "Blog",
@@ -191,8 +191,8 @@
     "subtitle": "Stories, insights, and updates from our coffee journey",
     "noPosts": "No blog posts yet. Check back soon!",
     "backToBlog": "Back to Blog",
-    "metaTitle": "Blog | concept:coffee",
-    "metaDescription": "Stories, insights, and updates from our coffee journey."
+    "englishNotice": "Some guides are available in English.",
+    "relatedWorkshop": "Related workshop"
   },
   "workshopsPage": {
     "eyebrow": "Private Sessions",
@@ -408,7 +408,7 @@
     "missionTitle": "Our Mission",
     "missionText": "We believe in the power of education and collaboration, and we're here to make specialty coffee more accessible for everyone. Our goal is to build a community that values quality, sustainability, and education, helping people understand that every cup has a story—from farm to cup. At Concept:Coffee, it's about more than just the coffee—it's about building a culture of appreciation, creativity, and knowledge.",
     "studioTitle": "The Studio",
-    "studioText": "Located at Yonatan Ratosh 2, designed and constructed by founder Evan Goel. The Concept:Coffee Studio is dedicated space where coffee education, creativity, and community collide. Located by the beautiful Jaffa port, our studio is a place where anyone—whether you're a curious beginner or a seasoned enthusiast—can immerse themselves in the world of specialty coffee. This is more than just a studio. It's a creative hub, a learning space, and a community gathering point where people come together to share their love for coffee, creativity, and knowledge.",
+    "studioText": "Located at {street}, designed and constructed by founder Evan Goel. The Concept:Coffee Studio is dedicated space where coffee education, creativity, and community collide. Located by the beautiful Jaffa port, our studio is a place where anyone—whether you're a curious beginner or a seasoned enthusiast—can immerse themselves in the world of specialty coffee. This is more than just a studio. It's a creative hub, a learning space, and a community gathering point where people come together to share their love for coffee, creativity, and knowledge.",
     "asSeenOn": "As Seen On",
     "featuredIn": "Featured In",
     "ctaTitle": "Come Learn With Us",
@@ -419,24 +419,36 @@
   "groupWorkshopsPage": {
     "eyebrow": "Curated Coffee Learning",
     "title": "Special Classes",
-    "subtitle": "One-off, open-signup coffee experiences beyond our regular private workshops. This Sukkot, we’re opening the studio for something a little different: a hands-on workshop where you’ll create your own coffee blend from scratch.",
-    "eventEyebrow": "Sukkot Special",
+    "subtitle": "One-off, open-signup coffee experiences beyond our regular private workshops.",
+    "eventEyebrow": "Past Sukkot class",
     "eventTitle": "Blend Lab",
-    "eventIntro": "Build your own coffee blend and take it home!",
-    "eventBody1": "Taste, experiment, build your own blend, and take it home.",
+    "eventIntro": "A hands-on class about building your own coffee blend.",
+    "eventBody1": "The format combines coffee tasting, experiments with ratios and a take-home blend.",
     "eventBody2": "Ever wonder how coffee blends are actually built or what would happen if you could design one around the flavors you like?",
-    "eventBody3": "We’ll start by tasting four different coffees and breaking down what each one contributes to a blend: acidity, body, balance.",
-    "eventBody4": "Then it’s your turn to experiment!",
+    "eventBody3": "The format starts with four coffees and explores what each contributes to a blend: acidity, body and balance.",
+    "eventBody4": "Then the format makes room to experiment with different ratios.",
     "learningPoint1": "Experiment with ratios and see how they completely change the final cup",
     "learningPoint2": "Build a blend around the flavors you actually enjoy, and take it home!",
-    "takeHomePrefix": "At the end, you’ll weigh, name, and package your final blend—and leave with ",
-    "takeHomeHighlight": "200g of coffee you created yourself",
-    "takeHomeSuffix": ", along with your personal recipe.",
-    "dateOptionsTitle": "Dates",
-    "dateOption1": "Sep. 25 at 10:00",
-    "dateOption2": "Sep. 24 at 18:00",
-    "ctaLine": "Taste it. Build it. Take it home.",
-    "bookBlendLab": "Book Blend Lab",
-    "closingLine": "Coffee is a concept. Make it yours."
+    "takeHomePrefix": "The final step is to weigh, name and package ",
+    "takeHomeHighlight": "200g of the custom blend",
+    "takeHomeSuffix": ", along with its recipe.",
+    "dateOptionsTitle": "Past sessions",
+    "dateOption1": "September 25, 2026 at 10:00",
+    "dateOption2": "September 24, 2026 at 18:00",
+    "ctaLine": "These sessions have ended.",
+    "closingLine": "Coffee is a concept. Make it yours.",
+    "communityLink": "See community events"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "playVideo": "Play background video",
+    "pauseVideo": "Pause background video",
+    "openBooking": "Open booking in Monkeybook",
+    "founderPhoto": "Evan, founder of Concept:Coffee",
+    "studioMap": "Map of the Concept:Coffee studio",
+    "workshopPhoto": "{workshop}, photo {number}",
+    "workshopGallery": "Workshop photos",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
   }
 }

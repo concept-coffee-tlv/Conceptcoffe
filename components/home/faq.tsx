@@ -1,5 +1,3 @@
-"use client"
-
 import { useTranslations } from "next-intl"
 import {
   Accordion,
@@ -61,10 +59,10 @@ export function FAQ() {
                     value={`${sectionIndex}-${index}`}
                     className="rounded-lg px-4 overflow-hidden data-[state=open]:bg-secondary"
                   >
-                    <AccordionTrigger className="text-left font-medium hover:no-underline">
+                    <AccordionTrigger className="text-start font-medium hover:no-underline">
                       {t(`questions.${questionKey}.question`)}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                    <AccordionContent forceMount className="text-muted-foreground leading-relaxed pb-4">
                       {t(`questions.${questionKey}.answer`)}
                     </AccordionContent>
                   </AccordionItem>

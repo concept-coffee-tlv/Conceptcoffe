@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
@@ -42,7 +40,7 @@ export function WorkshopTypes() {
   const t = useTranslations("workshopsPage")
 
   return (
-    <section className="py-24 lg:py-32 bg-background">
+    <section id="booking" tabIndex={-1} className="scroll-mt-24 py-24 lg:py-32 bg-background">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <div className="mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">{t("sectionTitle")}</h2>
@@ -56,8 +54,9 @@ export function WorkshopTypes() {
                 <div className="aspect-[16/9] overflow-hidden relative">
                   <Image
                     src={workshopImages[workshopId]}
-                    alt={t(`workshops.${workshopId}.title`)}
+                    alt=""
                     fill
+                    sizes="(min-width: 1024px) 33vw, 100vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

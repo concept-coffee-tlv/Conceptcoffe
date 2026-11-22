@@ -1,10 +1,10 @@
-"use client"
-
 import Image from "next/image"
-import { useTranslations } from "next-intl"
+import { site } from "@/lib/site"
+import { useLocale, useTranslations } from "next-intl"
 
 export function AboutValues() {
   const t = useTranslations("aboutPage")
+  const locale = useLocale()
 
   return (
     <section className="py-24 lg:py-32 bg-secondary">
@@ -24,6 +24,7 @@ export function AboutValues() {
                 src="/about/mission.avif"
                 alt={t("missionTitle")}
                 fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -40,7 +41,7 @@ export function AboutValues() {
             <div className="lg:pr-8 order-2 lg:order-1">
               <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">{t("studioTitle")}</h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                {t("studioText")}
+                {t("studioText", { street: site.address[locale === "he" ? "he" : "en"].street })}
               </p>
             </div>
             <div className="aspect-[4/3] relative rounded-xl overflow-hidden order-1 lg:order-2">
@@ -48,6 +49,7 @@ export function AboutValues() {
                 src="/about/studio.avif"
                 alt={t("studioTitle")}
                 fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
             </div>
