@@ -9,6 +9,7 @@ export const site = {
   phoneDisplay: "058-400-1289",
   instagram: "https://www.instagram.com/conceptcoffee_tlv",
   whatsapp: "https://wa.me/972584001289",
+  showSpecialClasses: false,
   address: {
     en: { street: "Yonatan Ratosh 2", city: "Tel Aviv–Yafo" },
     he: { street: "יונתן רטוש 2", city: "תל אביב-יפו" },

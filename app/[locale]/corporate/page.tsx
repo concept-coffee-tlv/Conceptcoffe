@@ -1,7 +1,8 @@
 import { TrackedAnchor } from "@/components/tracked-anchor"
 import { site } from "@/lib/site"
 import { PageStructuredData } from "@/components/structured-data"
-import { audiencePagesPublished, pageMetadata, type LocalePageProps } from "@/lib/seo"
+import { canViewAudiencePages, pageMetadata, type LocalePageProps } from "@/lib/seo"
+import { groupCopy } from "@/lib/audience-content"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -43,7 +44,7 @@ export default async function CorporatePage({ params }: LocalePageProps) {
                   <p>{t("paragraph1")}</p>
                   <p>{t("paragraph2")}</p>
                 </div>
-                <div className="mt-10">
+                <div className="mt-10 flex flex-wrap items-center gap-4">
                   <Button
                     asChild
                     size="lg"
@@ -53,6 +54,11 @@ export default async function CorporatePage({ params }: LocalePageProps) {
                       {t("cta")}
                     </TrackedAnchor>
                   </Button>
+                  {canViewAudiencePages() && (
+                    <Button asChild variant="outline" size="lg">
+                      <Link href="/coffee-workshops-for-groups#group-inquiry">{groupCopy[locale === "he" ? "he" : "en"].title}</Link>
+                    </Button>
+                  )}
                 </div>
               </div>
 
@@ -105,11 +111,6 @@ export default async function CorporatePage({ params }: LocalePageProps) {
             </div>
           </div>
         </section>
-        {audiencePagesPublished && (
-          <div className="mx-auto max-w-[1400px] px-6 py-9 font-medium underline underline-offset-4 lg:px-12">
-            <Link href="/coffee-workshops-for-groups">{locale === "he" ? "סדנאות קפה לקבוצות" : "Coffee workshops for groups"}</Link>
-          </div>
-        )}
       </main>
       <Footer />
     </>

@@ -1,95 +1,111 @@
 "use client"
 
-import { useState, type FormEvent } from "react"
+import { startTransition, useActionState, useEffect, useState, type FormEvent } from "react"
 import { track } from "@vercel/analytics"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { sendGroupInquiry } from "@/components/audience/group-inquiry-action"
 import type { GroupFormCopy } from "@/lib/audience-content"
-import { site } from "@/lib/site"
+import { inquiryLimits, type InquiryStatus } from "@/lib/group-inquiry"
 import type { Locale } from "@/src/i18n/routing"
 
-function isContact(value: string) {
-  const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-  const phone = /^\+?[\d ().-]+$/.test(value) && value.replace(/\D/g, "").length >= 7
-  return email || phone
-}
+const initialFields = { name: "", contact: "", participants: "", date: "", occasion: "", language: "", interest: "" }
 
 export function GroupInquiry({ copy, locale }: { copy: GroupFormCopy; locale: Locale }) {
-  const [draftReady, setDraftReady] = useState(false)
+  const [status, submit, pending] = useActionState(sendGroupInquiry.bind(null, locale), "idle" as InquiryStatus)
+  const [fields, setFields] = useState(initialFields)
+  const selections = [
+    { name: "occasion", label: copy.occasion, options: copy.occasions },
+    { name: "language", label: copy.language, options: copy.languageOptions },
+  ] as const
 
-  function openDraft(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    const form = event.currentTarget
-    const data = new FormData(form)
-    const contact = String(data.get("contact") ?? "").trim()
-    const input = form.elements.namedItem("contact") as HTMLInputElement
-    if (!isContact(contact)) {
-      input.setCustomValidity(copy.invalidContact)
-      input.reportValidity()
-      return
-    }
-
-    const fields = ["name", "contact", "organization", "participants", "date", "language", "venue", "event", "notes"] as const
-    const body = fields.flatMap((field) => {
-      const value = String(data.get(field) ?? "").trim()
-      return value ? [`${copy[field]}: ${value}`] : []
-    }).join("\r\n")
-
-    setDraftReady(true)
-    track("group_email_draft_requested", { locale })
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(copy.subject)}&body=${encodeURIComponent(body)}`
+  function setField(name: keyof typeof initialFields, value: string) {
+    setFields((previous) => ({ ...previous, [name]: value }))
   }
 
-  const selects = [
-    { name: "language", options: copy.languages },
-    { name: "venue", options: copy.venues },
-    { name: "event", options: copy.eventTypes },
-  ] as const
+  function submitInquiry(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    startTransition(() => submit(data))
+  }
+
+  useEffect(() => {
+    if (status === "sent") track("group_inquiry_sent", { locale })
+  }, [locale, status])
 
   return (
     <>
-      <p className="mt-3 max-w-prose text-muted-foreground">{copy.intro}</p>
-      <form action={`mailto:${site.email}`} method="post" encType="text/plain" onSubmit={openDraft} className="mt-7 grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium">
-          {copy.name}
-          <Input name="name" autoComplete="name" required maxLength={100} pattern={".*\\S.*"} />
-        </label>
-        <label className="grid gap-2 text-sm font-medium">
-          {copy.contact}
-          <Input name="contact" autoComplete="off" required maxLength={160} onChange={(event) => event.currentTarget.setCustomValidity("")} />
-        </label>
-        <label className="grid gap-2 text-sm font-medium">
-          {copy.organization}
-          <Input name="organization" autoComplete="organization" maxLength={100} />
-        </label>
-        <label className="grid gap-2 text-sm font-medium">
-          {copy.participants}
-          <Input name="participants" type="number" min={1} step={1} required />
-        </label>
-        <label className="grid gap-2 text-sm font-medium">
-          {copy.date}
-          <Input name="date" type="date" />
-        </label>
-        {selects.map(({ name, options }) => (
-          <label key={name} className="grid gap-2 text-sm font-medium">
-            {copy[name]}
-            <select name={name} required defaultValue="" className="h-9 min-w-0 rounded-md border border-input bg-background px-3 focus-visible:outline-2 focus-visible:outline-ring">
-              <option value="" disabled>{copy.choose}</option>
-              {options.map((option) => <option key={option}>{option}</option>)}
-            </select>
+      {status !== "sent" && (
+        <form action={submit} onSubmit={submitInquiry} className="mt-5 grid gap-4">
+          <label className="grid gap-2 text-sm font-medium">
+            {copy.name}
+            <Input name="name" autoComplete="name" required maxLength={inquiryLimits.name} value={fields.name} onChange={(event) => setField("name", event.target.value)} />
           </label>
-        ))}
-        <label className="grid gap-2 text-sm font-medium sm:col-span-2">
-          {copy.notes}
-          <Textarea name="notes" maxLength={500} rows={3} />
-        </label>
-        <div className="sm:col-span-2">
-          <Button type="submit" aria-describedby="inquiry-handoff" className="bg-primary text-primary-foreground">{copy.submit}</Button>
-          <p id="inquiry-handoff" className="mt-2 text-sm text-muted-foreground">{copy.preSubmit}</p>
-          <p role="status" className="mt-2 text-sm font-medium">{draftReady ? copy.status : ""}</p>
-        </div>
-      </form>
+          <label className="grid gap-2 text-sm font-medium">
+            {copy.contact}
+            <Input
+              name="contact"
+              dir="auto"
+              required
+              maxLength={inquiryLimits.contact}
+              aria-invalid={status === "invalidContact"}
+              aria-describedby={status === "invalidContact" ? "group-inquiry-status" : undefined}
+              value={fields.contact}
+              onChange={(event) => setField("contact", event.target.value)}
+            />
+          </label>
+          <fieldset className="min-w-0 rounded-md border border-border p-4" aria-describedby={status === "invalidPlanning" ? "group-inquiry-status" : undefined}>
+            <legend className="px-1 text-sm font-semibold">{copy.planning}</legend>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="grid min-w-0 gap-2 text-sm font-medium">
+                {copy.participants}
+                <Input name="participants" type="number" min={1} step={1} value={fields.participants} onChange={(event) => setField("participants", event.target.value)} />
+              </label>
+              <label className="grid min-w-0 gap-2 text-sm font-medium">
+                {copy.date}
+                <Input name="date" type="date" value={fields.date} onChange={(event) => setField("date", event.target.value)} />
+              </label>
+              {selections.map(({ name, label, options }) => (
+                <label key={name} className="grid min-w-0 gap-2 text-sm font-medium">
+                  {label}
+                  <select
+                    name={name}
+                    value={fields[name]}
+                    onChange={(event) => setField(name, event.target.value)}
+                    className="h-9 w-full min-w-0 rounded-md border border-input bg-background px-3 text-base shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 md:text-sm"
+                  >
+                    <option value="">{copy.choose}</option>
+                    {Object.entries(options).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                  </select>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <label className="grid gap-2 text-sm font-medium">
+            {copy.interest}
+            <Textarea
+              name="interest"
+              required
+              maxLength={inquiryLimits.interest}
+              rows={3}
+              placeholder={copy.interestHint}
+              value={fields.interest}
+              onChange={(event) => setField("interest", event.target.value)}
+            />
+          </label>
+          <label hidden>
+            Website
+            <input name="website" autoComplete="off" tabIndex={-1} />
+          </label>
+          <Button type="submit" disabled={pending} className="justify-self-start">
+            {pending ? copy.sending : copy.submit}
+          </Button>
+        </form>
+      )}
+      <p id="group-inquiry-status" role="status" className="mt-3 text-sm font-medium empty:mt-0">
+        {status !== "idle" && !pending ? copy[status] : ""}
+      </p>
     </>
   )
 }

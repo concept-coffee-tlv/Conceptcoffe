@@ -75,8 +75,8 @@ export const publicPages = {
     he: { title: "חוויות קפה בתל אביב-יפו", description: "מחפשים פעילות ביפו? גלו טעימות קפה וסדנאות מעשיות בעברית ובאנגלית בסטודיו Concept:Coffee." },
   },
   "/coffee-workshops-for-groups": {
-    en: { title: "Coffee Workshops for Groups", description: "Plan a Concept:Coffee workshop for a private group, delegation or university visit. Explore studio sessions, guided tastings and off-site options." },
-    he: { title: "סדנאות קפה לקבוצות", description: "תכננו סדנת קפה לקבוצה פרטית, למשלחת או לביקור לימודי. גלו מפגשים בסטודיו, טעימות מודרכות ואפשרויות לפעילות במתחם שלכם." },
+    en: { title: "Group Coffee Workshops in Tel Aviv–Jaffa", description: "Plan a guided coffee tasting or hands-on workshop in Tel Aviv–Jaffa for your team, visiting group, or private celebration. Available in English or Hebrew." },
+    he: { title: "סדנאות קפה לקבוצות בתל אביב-יפו", description: "טעימות קפה מודרכות וסדנאות קפה מעשיות בתל אביב-יפו, לימי גיבוש, קבוצות מבקרים וחגיגות פרטיות. בעברית ובאנגלית." },
   },
 } satisfies Record<string, LocalizedCopy>
 
@@ -135,9 +135,10 @@ export function pageMetadata(path: PublicPage) {
   }
 }
 
+export function canViewAudiencePages() {
+  return audiencePagesPublished || isPreview || process.env.NODE_ENV === "development" || process.env.SHOW_AUDIENCE_DRAFTS === "true"
+}
+
 export function requireAudiencePage() {
-  if (audiencePagesPublished || isPreview || process.env.NODE_ENV === "development" || process.env.SHOW_AUDIENCE_DRAFTS === "true") {
-    return
-  }
-  notFound()
+  if (!canViewAudiencePages()) notFound()
 }

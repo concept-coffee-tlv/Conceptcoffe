@@ -42,7 +42,7 @@ export default async function CustomPage({ params }: LocalePageProps) {
       <main id="main-content" tabIndex={-1}>
         {/* Hero Section with Image */}
         <section className="relative pt-24 lg:pt-32">
-          <div className="pointer-events-none absolute inset-0 h-[60vh] lg:h-[70vh]">
+          <div className="absolute inset-0 h-[60vh] lg:h-[70vh]">
             <Image
               src="/images/custom.avif"
               alt=""
@@ -69,7 +69,7 @@ export default async function CustomPage({ params }: LocalePageProps) {
 
         {/* Main Content */}
         <section className="py-24 lg:py-32 bg-background">
-          <div className="relative mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
 
               {/* Left: Description */}

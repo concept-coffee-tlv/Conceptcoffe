@@ -1,4 +1,5 @@
 import Image from "next/image"
+import type { ReactNode } from "react"
 import { useTranslations } from "next-intl"
 import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
@@ -16,7 +17,7 @@ const workshopImages: Record<WorkshopId, string> = {
   custom: "/images/custom.avif",
 }
 
-export function WorkshopHero() {
+export function WorkshopHero({ children }: { children?: ReactNode }) {
   const t = useTranslations("workshopsPage")
 
   return (
@@ -30,6 +31,7 @@ export function WorkshopHero() {
           <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
             {t("subtitle")}
           </p>
+          {children}
         </div>
       </div>
     </section>

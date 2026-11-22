@@ -5,18 +5,18 @@
 | Audience | Search intent and landing page | Visitor action |
 | --- | --- | --- |
 | Tourists, English-speaking visitors, expats, couples and visiting friends or family | Coffee workshop Tel Aviv, coffee tasting Jaffa, English coffee workshop, private tasting, activities for couples, things to do in Jaffa. Review `/en/coffee-experiences-tel-aviv` and its `/he/` equivalent. | Explore the workshop directory or ask the studio about a private session through WhatsApp. |
-| Group planners, universities, study-abroad programs, delegations, community groups and celebrations | Educational coffee workshops for groups, guided coffee tasting for a delegation, off-site group activities. Review `/en/coffee-workshops-for-groups` and its `/he/` equivalent. | Open an email inquiry draft, or contact the studio directly by email or WhatsApp. |
+| Group planners, universities, study-abroad programs, delegations, community groups and celebrations | Educational coffee workshops for groups, guided coffee tasting for a delegation, off-site group activities. Review `/en/coffee-workshops-for-groups` and its `/he/` equivalent. | Submit a short inquiry, or contact the studio directly by email or WhatsApp. |
 | Guides, concierges, agencies, hotels and destination-management companies | Itinerary logistics, lead time, arrival, venue suitability and operator coordination. Review the draft below. | Email an itinerary brief and discuss availability with the studio. |
 
 A qualitative search review found Concept:Coffee’s homepage, workshop detail pages and About page competing for coffee-specific local terms. Broader Jaffa activity searches also surfaced destination guides and tours, indicating a separate visitor decision about where a workshop fits into their day. No paid search data or keyword volume was available. The copy leads with actual local and booking information. [Concept:Coffee workshop directory](https://www.concept-coffee.com/en/workshops) · [Tel Aviv–Yafo tourism](https://www.visit-tel-aviv.com/)
 
 Both landing pages are available in development and Vercel preview. They are excluded from the production sitemap and return 404 on the default production build. Once the owner approves both pages and confirms the address and inquiry journey, `PUBLISH_AUDIENCE_PAGES=true` enables indexing and selected links from the workshop directory and corporate page. The homepage and global navigation are outside this link rollout. After launch, add links from genuinely related guides as the corresponding content is approved.
 
-## Group logistics and qualification
+## Group inquiries and follow-up
 
-Ask for approximate headcount, time window, language, venue, activity type and a contact. In subsequent discussion confirm how many people can use equipment at once, whether guided tasting or demonstration suits the schedule, and the venue’s tables, water, power, access and setup time. Confirm the duration of any adapted session with the studio. Seek permission to use any event example or partner name. Link corporate planners to the existing corporate page and preserve the existing Monkeybook options for standard private workshops.
+The group page lists guided tastings, hands-on workshops and custom group sessions. The form asks for a name, an email or phone number, and what the group is interested in. Organizers can also share an estimated group size, preferred date, occasion and preferred language. Confirm details and logistics when following up.
 
-The inquiry form uses browser validation and opens a visitor-controlled email draft. The site collects no inquiry submissions through an API. A draft-open event measures intent. An inquiry is qualified after an organizer sends it and the studio confirms it has the information needed to respond.
+The website validates inquiries and submits them to Formspree, which stores the submission and emails the form’s target address. The `group_inquiry_sent` event records provider acceptance and page language. Evan can qualify the inquiry when following up.
 
 ## Tour operators and travel partners · full English review draft
 

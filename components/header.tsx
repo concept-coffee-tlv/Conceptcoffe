@@ -8,6 +8,7 @@ import { Link } from "@/src/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import type { Locale } from "@/src/i18n/routing"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { site } from "@/lib/site"
 
 export function Header({ localizedPaths }: { localizedPaths?: Record<Locale, string> }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -16,7 +17,7 @@ export function Header({ localizedPaths }: { localizedPaths?: Record<Locale, str
 
   const navigation = [
     { name: t("workshops"), href: "/workshops" },
-    { name: t("specialClasses"), href: "/group-workshops" },
+    ...(site.showSpecialClasses ? [{ name: t("specialClasses"), href: "/group-workshops" }] : []),
     { name: t("corporate"), href: "/corporate" },
     { name: t("community"), href: "/community" },
     { name: t("blog"), href: "/blog" },
